@@ -1,4 +1,4 @@
-import FindTripylerBanner from "@/components/commons/Layout/findTripylerBanner";
+import FindTwithmeBanner from "@/components/commons/Layout/findTwithmeBanner";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -27,7 +27,7 @@ export default function FindTripylerApplyDetail() {
 
   const fetchData = async () => {
     await axios
-      .get(`${apiPath}/tripyler/apply/${applyId}`)
+      .get(`${apiPath}/twithme/apply/${applyId}`)
       .then((res) => {
         setData({ ...res.data.data });
       })
@@ -36,17 +36,17 @@ export default function FindTripylerApplyDetail() {
 
   const onClickRejectBtn = async () => {
     await axios
-      .get(`${apiPath}/tripyler/apply/refuse/${applyId}`)
+      .get(`${apiPath}/twithme/apply/refuse/${applyId}`)
       .then((res) => {
         alert("거절");
-        router.push(`/findTripyler/${tripylerId}`);
+        router.push(`/findTwithme/${tripylerId}`);
       })
       .catch((err) => console.error(err));
   };
 
   const onClickAcceptBtn = async () => {
     await axios
-      .get(`${apiPath}/tripyler/apply/accept/${applyId}`)
+      .get(`${apiPath}/twithme/apply/accept/${applyId}`)
       .then((res) => {
         alert("수락");
         setIsAccept(true);
@@ -63,7 +63,7 @@ export default function FindTripylerApplyDetail() {
       })
       .then((res) => {
         alert("전송이 완료되었습니다.");
-        router.push(`/findTripyler/${tripylerId}`);
+        router.push(`/findTwithme/${tripylerId}`);
       })
       .catch((err) => console.error(err));
     event.target.reset();
@@ -71,11 +71,11 @@ export default function FindTripylerApplyDetail() {
 
   return (
     <>
-      <FindTripylerBanner
-        title="Trip'yler 신청내역"
-        subTitle="Trip’yle에서 나에게 동행신청을 보낸 Trip’yler들을 만나보세요."
+      <FindTwithmeBanner
+        title="TwithMe 신청내역"
+        subTitle="TwithMe에서 나에게 동행신청을 보낸 TwithMe들을 만나보세요."
       />
-      <S.Title>Trip’yler 신청 확인하기</S.Title>
+      <S.Title>TwithMe 신청 확인하기</S.Title>
       <S.Contents>
         <S.ContentsImgWrapper>
           <S.ContentsImg src="/img/Santorini.png" />
@@ -107,7 +107,7 @@ export default function FindTripylerApplyDetail() {
               <S.SendMsgInput
                 name="message"
                 autoComplete="off"
-                placeholder="Trip’yler 신청 메세지를 입력해주세요."
+                placeholder="TwithMe 신청 메세지를 입력해주세요."
               ></S.SendMsgInput>
               <S.SendMsgBtn>Send</S.SendMsgBtn>
             </S.SendMsgForm>

@@ -60,7 +60,7 @@ export default function TriplogWrite(props) {
 
   const fetchList = async () => {
     await axios
-      .get(`${apiPath}/my-collections/my-all-tripylers`)
+      .get(`${apiPath}/my-collections/my-all-twithmes`)
       .then((res) => {
         setTripList([...res.data.data]);
       })
@@ -82,7 +82,7 @@ export default function TriplogWrite(props) {
     setIsOpenWithTripList(false);
   };
 
-  // 동행 Tripyler
+  // 동행 TwithMe
   const onClickWithTrip = () => {
     setIsOpenWithTripList((prev) => !prev);
   };
@@ -206,7 +206,7 @@ export default function TriplogWrite(props) {
       <S.TitleBanner>
         <S.TitleTxt>
           <S.Title>여행 후기 게시물 {props.isEdit ? "수정" : "등록"}</S.Title>
-          <S.SubTitle>Trip’yler와 함께한 여행 후기를 들려주세요</S.SubTitle>
+          <S.SubTitle>TwithMe와 함께한 여행 후기를 들려주세요</S.SubTitle>
         </S.TitleTxt>
         <S.WriteForm>
           <S.StepWrapper>
@@ -268,7 +268,7 @@ export default function TriplogWrite(props) {
                   <S.InfoBoxItem
                     style={{ marginLeft: "35x", position: "relative" }}
                   >
-                    <S.InfoBoxTitle>동행 Tripyler</S.InfoBoxTitle>
+                    <S.InfoBoxTitle>동행 TwithMe</S.InfoBoxTitle>
 
                     <S.WithTripProfileList>
                       {selectedInfo.tripylerWithList ? (
@@ -301,7 +301,7 @@ export default function TriplogWrite(props) {
                     {isOpenWithTripList && (
                       <S.WithTripList>
                         <S.WithTripListTitle>
-                          Trip’yler 리스트
+                        TwithMe 리스트
                         </S.WithTripListTitle>
                         <S.WithTripListWrapper>
                           {selectedInfo.tripylerWithList.map((el) => (

@@ -1,5 +1,5 @@
 import { IsJwtValidSelector, JwtTokenState, LoginState } from '@/States/LoginState';
-import FindTripylerBanner from "@/components/commons/Layout/findTripylerBanner";
+import FindTwithmeBanner from "@/components/commons/Layout/findTwithmeBanner";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -66,11 +66,11 @@ export default function FindTripylerDetail() {
   const [isOpenWithTripList, setIsOpenWithTripList] = useState(false);
 
   const onClickApplyBtn = () => {
-    router.push(`/findTripyler/${tripylerId}/apply`);
+    router.push(`/findTwithme/${tripylerId}/apply`);
   };
 
   const onClickEditBtn = () => {
-    router.push(`/findTripyler/${tripylerId}/edit`);
+    router.push(`/findTwithme/${tripylerId}/edit`);
   };
 
   const formatUserInfo = (age, gender) => {
@@ -101,7 +101,7 @@ export default function FindTripylerDetail() {
   // 동행 신청자 리스트
   const fetchList = async () => {
     await axios
-      .get(apiPath + "/tripyler/apply")
+      .get(apiPath + "/twithme/apply")
       .then((res) => {
         const { [tripylerId]: selectedValue } = res.data.data;
         setApplyList([...selectedValue]);
@@ -119,7 +119,7 @@ export default function FindTripylerDetail() {
       window.localStorage.getItem("login-token");
 
     await axios
-      .get(`${apiPath}/tripyler/${tripylerId}`)
+      .get(`${apiPath}/twithme/${tripylerId}`)
       .then((res) => {
         const data = res.data.data;
         setData({ ...data });
@@ -133,7 +133,7 @@ export default function FindTripylerDetail() {
   // 댓글 기능
   const fetchComment = async () => {
     axios
-      .get(`${apiPath}/tripyler/${tripylerId}/comment/list`)
+      .get(`${apiPath}/twithme/${tripylerId}/comment/list`)
       .then((res) => {
         setCommentData([...res.data.data]);
       })
@@ -148,7 +148,7 @@ export default function FindTripylerDetail() {
     event.preventDefault();
 
     await axios
-      .post(`${apiPath}/tripyler/comment`, {
+      .post(`${apiPath}/twithme/comment`, {
         content: event.target.comment.value,
         tripylerId,
       })
@@ -162,7 +162,7 @@ export default function FindTripylerDetail() {
   // 좋아요 기능
   const onClickLike = async () => {
     await axios
-      .post(apiPath + "/tripyler/like", {
+      .post(apiPath + "/twithme/like", {
         tripylerId,
       })
       .then((res) => {
@@ -181,11 +181,11 @@ export default function FindTripylerDetail() {
 
   // 이전, 다음게시물 이동 기능
   const onClickPrevPost = () => {
-    router.push(`/findTripyler/${data.previousTripylerId}`);
+    router.push(`/findTwithme/${data.previousTripylerId}`);
   };
 
   const onClickNextPost = () => {
-    router.push(`/findTripyler/${data.nextTripylerId}`);
+    router.push(`/findTwithme/${data.nextTripylerId}`);
   };
 
   // 동행자 프로필
@@ -195,9 +195,9 @@ export default function FindTripylerDetail() {
 
   return (
     <>
-      <FindTripylerBanner
-        title="Trip'yler 찾기"
-        subTitle="함께 하고 싶은 여행자를 Trip’yle에서 바로 찾아보세요"
+      <FindTwithmeBanner
+        title="TwithMe 찾기"
+        subTitle="함께 하고 싶은 여행자를 TwithMe에서 바로 찾아보세요"
       />
       <S.ContentsLoc>
         <S.LocIcon src="/icon/loc_white.svg" />
@@ -233,7 +233,7 @@ export default function FindTripylerDetail() {
           <S.MidTopRightWrapper>
             <S.WithTripylerWrapper>
               <S.WithTripTitle>
-                동행 Trip’yler ({data.tripylerWithList?.length}명)
+                동행 TwithMe ({data.tripylerWithList?.length}명)
               </S.WithTripTitle>
               <S.WithTripProfileList>
                 {data.tripylerWithList
@@ -257,7 +257,7 @@ export default function FindTripylerDetail() {
               </S.WithTripProfileList>
               {isOpenWithTripList && (
                 <S.WithTripList>
-                  <S.WithTripListTitle>Trip’yler 리스트</S.WithTripListTitle>
+                  <S.WithTripListTitle>TwithMe 리스트</S.WithTripListTitle>
                   <S.WithTripListWrapper>
                     {data.tripylerWithList?.map((el) => (
                       <S.WithTripListItem>
@@ -343,7 +343,7 @@ export default function FindTripylerDetail() {
                       <S.ViewApplyBtn
                         onClick={() =>
                           router.push(
-                            `/findTripyler/${tripylerId}/${el.tripylerApplyId}`
+                            `/findTwithme/${tripylerId}/${el.tripylerApplyId}`
                           )
                         }
                       >
@@ -364,7 +364,7 @@ export default function FindTripylerDetail() {
                         <S.ViewApplyBtn
                           onClick={() =>
                             router.push(
-                              `/findTripyler/${tripylerId}/${el.tripylerApplyId}`
+                              `/findTwithme/${tripylerId}/${el.tripylerApplyId}`
                             )
                           }
                         >

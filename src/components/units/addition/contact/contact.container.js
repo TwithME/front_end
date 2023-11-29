@@ -67,8 +67,8 @@ export default function ContactTripyle() {
                 <S.TitleWrapper>
                     <S.MainTitle>Contact</S.MainTitle>
                     <S.MainTxtBox>
-                        <S.MainTxt>Trip'yle를 방문해주신 Trip'yler 여러분 모두 환영합니다!</S.MainTxt>
-                        <S.MainTxt>Trip'yle 이용 중 불편했던 점이 있으시다면 아래 내용을 기입해주세요.</S.MainTxt>
+                        <S.MainTxt>TwithMe를 방문해주신 여러분 모두 환영합니다!</S.MainTxt>
+                        <S.MainTxt>TwithMe 이용 중 불편했던 점이 있으시다면 아래 내용을 기입해주세요.</S.MainTxt>
                         <S.MainTxt>구체적인 문의 내용과 문의와 관련된 화면 스크린샷을 보내주시면 문제를 보다 빠르게 확인할 수 있습니다.</S.MainTxt>
                     </S.MainTxtBox>
                     <S.Line></S.Line>

@@ -1,4 +1,4 @@
-import FindTripylerBanner from "@/components/commons/Layout/findTripylerBanner";
+import FindTripylerBanner from "@/components/commons/Layout/findTwithmeBanner";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -27,23 +27,23 @@ export default function FindTripylerApplyList() {
   return (
     <>
       <FindTripylerBanner
-        title="Trip'yler 신청내역"
-        subTitle="Trip’yle에서 나에게 동행신청을 보낸 Trip’yler들을 만나보세요."
+        title="TwithMe 신청내역"
+        subTitle="TwithMe 에서 나에게 동행신청을 보낸 TwithMe들을 만나보세요."
       />
-      <S.Title>Trip’yler 신청 확인하기</S.Title>
+      <S.Title>TwithMe 신청 확인하기</S.Title>
       <S.PageInfo>
         <S.PageInfoTxt>
-          본인이 올린 여행자 찾기 게시물을 보고 신청폼을 작성한 Trip’yler들을
+          본인이 올린 여행자 찾기 게시물을 보고 신청폼을 작성한 TwithMe들을
           모아둔 페이지입니다.
         </S.PageInfoTxt>
         <S.PageInfoTxt>
-          Trip’yler들이 보낸 신청폼을 읽고 원하는 스타일의 Trip’yler에게 쪽지를
+        TwithMe들이 보낸 신청폼을 읽고 원하는 스타일의 TwithMe에게 쪽지를
           보내보세요!
         </S.PageInfoTxt>
       </S.PageInfo>
       <S.ApplyListSection>
         <S.ListInfo>
-          총 3명의 Trip’yler들이 일타님의 쪽지를 기다리고 있어요!
+          총 3명의 TwithMe들이 일타님의 쪽지를 기다리고 있어요!
         </S.ListInfo>
         <S.ApplyListWrapper>
           <S.ApplyList>

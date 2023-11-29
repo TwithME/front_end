@@ -26,7 +26,7 @@ export default function IntroduceTripyle() {
                     <S.TitleBox>
                         <S.TitleFirstTxt><img src="/assets/logo.png" width='163px' height='68px'/><span style={{'color': '#A7A7A7', 'font-size': '32px', 'font-weight': 'bold', 'padding': '23px 5px 0 15px'}}>만의</span> <span style={{'color': '#00B4D8', 'font-size': '32px', 'font-weight': 'bold', 'padding': '23px 10px 0 5px'}}>빠르고 간편한</span> <p style={{'color': '#A587FF', 'font-size': '50px', 'font-weight': 'bold'}}>여행 동행자 찾기</p></S.TitleFirstTxt>
                         <S.LittleTxt>여행지, 여행 일정, 같이 가고 싶은 인원 수를 설정하면</S.LittleTxt>
-                        <S.LittleTxt><span style={{'color': '#00B4D8', 'font-size': '30px', 'font-weight': 'bold'}}>1초</span> 만에 본인의 여행 일정에 맞는 Trip'yler들을 만날 수 있습니다.</S.LittleTxt>
+                        <S.LittleTxt><span style={{'color': '#00B4D8', 'font-size': '30px', 'font-weight': 'bold'}}>1초</span> 만에 본인의 여행 일정에 맞는 TwithMe들을 만날 수 있습니다.</S.LittleTxt>
                     </S.TitleBox>
                     <S.SearchWrapper>
                         <img src="/introduce/searchBox.png"/>
@@ -39,7 +39,7 @@ export default function IntroduceTripyle() {
                         </S.WhiteBubbleWrapper>
                         <S.ContentTxtWrapper>
                             <S.TitleFirstTxt><img src="/assets/logo.png" width='163px' height='68px'/><p style={{'color': '#A7A7A7', 'font-size': '32px', 'font-weight': 'bold', 'padding': '22px 5px 0 10px'}}>만의 </p> <p style={{'color': '#00B4D8', 'font-size': '32px', 'font-weight': 'bold', 'padding': '22px 5px 0 5px'}}>여행스타일 해시태그</p><p style={{'color': '#A7A7A7', 'font-size': '32px', 'font-weight': 'bold', 'padding': '22px 10px 0 5px'}}>로</p></S.TitleFirstTxt>
-                            <S.TitleFirstTxt><p style={{'color': '#A587FF', 'font-size': '32px', 'font-weight': 'bold', 'padding': '0 10px 0 5px'}}>나와 잘 맞는 </p> <p style={{'color': '#00B4D8', 'font-size': '32px', 'font-weight': 'bold', 'padding': '0 0 0 5px'}}>Trip'yler</p><p style={{'color': '#A7A7A7', 'font-size': '32px', 'font-weight': 'bold', 'padding': '0 10px 0 0'}}>와 함께 여행하기</p></S.TitleFirstTxt>
+                            <S.TitleFirstTxt><p style={{'color': '#A587FF', 'font-size': '32px', 'font-weight': 'bold', 'padding': '0 10px 0 5px'}}>나와 잘 맞는 </p> <p style={{'color': '#00B4D8', 'font-size': '32px', 'font-weight': 'bold', 'padding': '0 0 0 5px'}}>TwithMe</p><p style={{'color': '#A7A7A7', 'font-size': '32px', 'font-weight': 'bold', 'padding': '0 10px 0 0'}}>와 함께 여행하기</p></S.TitleFirstTxt>
                         </S.ContentTxtWrapper>
                     </S.ContentTitleWrapper>
                     <S.ContentMainWrapper>

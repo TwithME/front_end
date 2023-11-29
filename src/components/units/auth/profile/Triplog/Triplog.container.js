@@ -26,7 +26,7 @@ export default function Triplog(props) {
     <S.CollectionContentTitleWrapper>
       <S.CollectionContentTitleLeftWrapper>
         <S.CollectionContentIcon src="/icon/purpleSearch.png"></S.CollectionContentIcon>
-        <S.CollectionContentTitle selected={selectedCategory === 0} onClick={(e) => {setSelectedCategory(0); setYear(2023);}}>My Trip'yler들</S.CollectionContentTitle>
+        <S.CollectionContentTitle selected={selectedCategory === 0} onClick={(e) => {setSelectedCategory(0); setYear(2023);}}>My TwithMe들</S.CollectionContentTitle>
         <S.CollectionContentLine></S.CollectionContentLine>
         <S.CollectionContentTitle selected={selectedCategory === 1} onClick={(e) => {setSelectedCategory(1); setYear(2023);}}>My 여행 후기</S.CollectionContentTitle>
       </S.CollectionContentTitleLeftWrapper>

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import * as S from "./list.style";
 
-import FindTripylerBanner from "@/components/commons/Layout/findTripylerBanner";
+import FindTwithmeBanner from "@/components/commons/Layout/findTwithmeBanner";
 import Calendar from "@/components/commons/Tools/Calendar";
 import FindCard from '../../../commons/Card/Main/FindCard/FindCard';
 
@@ -134,7 +134,7 @@ export default function FindTripylerList(){
           }
       
           await axios
-            .post(`${apipath}/tripyler/list?isRecruiting=1&option=1`, requestData)
+            .post(`${apipath}/twithme/list?isRecruiting=1&option=1`, requestData)
             .then((res) => {
               setCardList(res.data.data);   
               setPage(1);
@@ -155,7 +155,7 @@ export default function FindTripylerList(){
           }
 
           await axios
-            .post(`${apipath}/tripyler/list?isRecruiting=1&option=1`, requestData)
+            .post(`${apipath}/twithme/list?isRecruiting=1&option=1`, requestData)
             .then((res) => {
               setCardList(res.data.data);   
               setPage(1);
@@ -191,7 +191,7 @@ export default function FindTripylerList(){
       }
   
       await axios
-        .post(`${apipath}/tripyler/list?isRecruiting=${parseInt(isRecruiting || 1)}&option=${parseInt(option || 1)}`, requestData)
+        .post(`${apipath}/twithme/list?isRecruiting=${parseInt(isRecruiting || 1)}&option=${parseInt(option || 1)}`, requestData)
         .then((res) => {
           setNewCardList(res.data.data);
           setPage(1);
@@ -296,7 +296,7 @@ export default function FindTripylerList(){
     useEffect(() => {console.log(pageNum)}, [pageNum]);
     return(
         <>
-        <FindTripylerBanner title="Trip'yler 찾기" subTitle={["함께 동행하고 싶은 여행자를", "Trip'yle에서 바로 찾아보고", "여행동행 게시물도 작성해보세요."]}/>
+        <FindTwithmeBanner title="TwithMe 찾기" subTitle={["함께 동행하고 싶은 여행자를", "TwithMe에서 바로 찾아보고", "여행동행 게시물도 작성해보세요."]}/>
         <S.Banner>
         <S.FindFilter>
           <S.FilterMainWrapper>
@@ -409,7 +409,7 @@ export default function FindTripylerList(){
       <S.ContentWrapper>
         <S.FindTripylerTitleWrapper>
             <S.FindTripylerTitle>
-              <div>Trip’yler 찾기 게시물</div>
+              <div>TwithMe 찾기 게시물</div>
             </S.FindTripylerTitle>
               {/* <S.FindTripylerWriteBtn onClick={() => {
                 if(!isLoggedIn){
@@ -456,7 +456,7 @@ export default function FindTripylerList(){
                   checkLogin();
                 } else{
                   if(!checkToken()) {
-                    router.push(`/findTripyler/${card.tripylerId}`);
+                    router.push(`/findTwithme/${card.tripylerId}`);
                   }
                 }
               }} id={card.tripylerId} info={card}/>
@@ -478,7 +478,7 @@ export default function FindTripylerList(){
 
         <S.FindTripylerTitleWrapper>
             <S.FindTripylerTitle>
-              <div>실시간 인기 Trip'yler 찾기 게시물</div>
+              <div>실시간 인기 TwithMe 찾기 게시물</div>
             </S.FindTripylerTitle>
         </S.FindTripylerTitleWrapper>
         <S.Review>
@@ -496,7 +496,7 @@ export default function FindTripylerList(){
                   checkLogin();
                 } else{
                   if(!checkToken()) {
-                    router.push(`/findTripyler/${card.tripylerId}`);
+                    router.push(`/findTwithme/${card.tripylerId}`);
                   }
                 }
               }} id={card.tripylerId} info={card}/>

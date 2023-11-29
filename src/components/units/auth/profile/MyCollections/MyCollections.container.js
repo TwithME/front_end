@@ -36,9 +36,9 @@ export default function MyCollections(props) {
         <S.CollectionContentTitleWrapper>
           <S.CollectionContentTitleLeftWrapper>
             <S.CollectionContentIcon src="/icon/purpleSearch.png"></S.CollectionContentIcon>
-            <S.CollectionContentTitle selected={selectedCategory === 2} onClick={(e) => setSelectedCategory(2)}>내가 신청한 Trip'yler</S.CollectionContentTitle>
+            <S.CollectionContentTitle selected={selectedCategory === 2} onClick={(e) => setSelectedCategory(2)}>내가 신청한 TwithMe</S.CollectionContentTitle>
             <S.CollectionContentLine></S.CollectionContentLine>
-            <S.CollectionContentTitle selected={selectedCategory === 0} onClick={(e) => setSelectedCategory(0)}>찜한 Trip'yler 게시물</S.CollectionContentTitle>
+            <S.CollectionContentTitle selected={selectedCategory === 0} onClick={(e) => setSelectedCategory(0)}>찜한 TwithMe 게시물</S.CollectionContentTitle>
             <S.CollectionContentLine></S.CollectionContentLine>
             <S.CollectionContentTitle selected={selectedCategory === 1} onClick={(e) => setSelectedCategory(1)}>찜한 여행 후기</S.CollectionContentTitle>
           </S.CollectionContentTitleLeftWrapper>

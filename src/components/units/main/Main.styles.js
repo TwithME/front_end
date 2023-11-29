@@ -60,7 +60,7 @@ export const BannerTxt = styled.div`
   margin: 100px 260px 0 260px;
   font-style: normal;
   font-weight: 500;
-  font-size: 25px;
+  font-size: 35px;
   line-height: 1;
   color: #ffffff;
   position: relative;

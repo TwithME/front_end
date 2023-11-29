@@ -82,7 +82,7 @@ export default function Main() {
         };
   
         try {
-          const res = await axios.post(`${apipath}/tripyler/list?isRecruiting=1&option=1`, requestData);
+          const res = await axios.post(`${apipath}/twithme/list?isRecruiting=1&option=1`, requestData);
           setResponse(res.data.data);
         } catch (error) {
           console.log(error);
@@ -93,7 +93,7 @@ export default function Main() {
     fetchData();
   }, []);
 
-  // Trip'yler 찾기 필터링
+  // TwithMe 찾기 필터링
   const router = useRouter();
   const onClcickFilterFind = async () => {
     if(checkToken()) {
@@ -110,7 +110,7 @@ export default function Main() {
     }
 
     await axios
-      .post(`${apipath}/tripyler/list?isRecruiting=1&option=1`, requestData)
+      .post(`${apipath}/twithme/list?isRecruiting=1&option=1`, requestData)
       .then((res) => {
         const arr = res.data.data;
         setFindCardList(res.data.data);        
@@ -130,7 +130,7 @@ export default function Main() {
         keyword: JSON.stringify(keyword)
       }
 
-    router.push("/findTripyler");
+    router.push("/findTwithme");
     setFindCardFilter(query);
     
   };
@@ -265,129 +265,16 @@ export default function Main() {
       <S.Banner>
         <S.BannerImgWrapper>
           <S.BannerTitle>
-            <S.TitleTxt>여행</S.TitleTxt>에
-            <S.TitleTxt> 스타일</S.TitleTxt>을
-            더하다
-          </S.BannerTitle>
           <S.BannerTxt>
-            함께 하고 싶은 여행자를 Trip’yle에서 바로 찾아보세요
+            함께 하고 싶은 여행자를 TwithMe에서 바로 찾아보세요
           </S.BannerTxt>
+          </S.BannerTitle>
         </S.BannerImgWrapper>
-        <S.FindFilter>
-          <S.FilterMainWrapper>
-            <S.FilterMiddleWrapper>
-            <S.FilterFrontWrapper>
-              <S.FilterWrapper>
-                <S.FilterTitleWrapper>
-                  <S.FilterTitleImg src="icon/location.png"></S.FilterTitleImg>
-                  <S.FilterTitleTxt>여행지</S.FilterTitleTxt>
-                  {isCountry && (
-                  <S.CountrySelectWrapper>
-                    <S.ContinentSelect>
-                      {destination.continent.map((des) => (
-                        <S.ContinentContent id={des.id} onClick={onOpenCountry} selected={selectedDestination.continent.name === des.name}>{des.name}</S.ContinentContent>
-                      ))}
-                    </S.ContinentSelect>
-                    <S.CountrySelect>
-                      {destination.country.map((des) => (
-                        <S.ContinentContent id={des.id} onClick={onOpenCity} selected={selectedDestination.country.name === des.name}>{des.name}</S.ContinentContent>
-                      ))}
-                    </S.CountrySelect>
-                    <S.CitySelect>
-                      {destination.city.map((des) => (
-                        <S.ContinentContent 
-                        id={des.id} 
-                        onClick={(e) => {
-                          setIsCountry(false); 
-                          setSelectedDestination(prev => ({
-                            ...prev,
-                            city: {id: e.target.id ,name: e.target.innerText}
-                          }));
-                          setShowDestination(prev => ({
-                            country: selectedDestination.country,
-                            city: e.target.innerText
-                          }))
-                        }}
-                        selected={selectedDestination.city.name === des.name}
-                        >{des.name}</S.ContinentContent>
-                      ))}
-                    </S.CitySelect>
-                  </S.CountrySelectWrapper>
-                )}
-                </S.FilterTitleWrapper>
-                <S.Filter style={{ width: "280px" }} onClick={onOpenDestination}>
-                  <S.FilterInput>{selectedDestination.city.name === "" ? "선택" : `${showDestination.country.name}, ${showDestination.city}`}</S.FilterInput>
-                  <S.FilterBtn></S.FilterBtn>
-                </S.Filter>
-                
-              </S.FilterWrapper>
-
-            <S.FilterWrapper style={{position: "relative"}}>
-              <S.FilterTitleWrapper>
-                <S.FilterTitleImg src="icon/calendar.png"></S.FilterTitleImg>
-                <S.FilterTitleTxt>일정</S.FilterTitleTxt>
-              </S.FilterTitleWrapper>
-              <S.DateFilterWrapper onClick={(e) => {isOpenCalendar ? setIsOpenCalendar(false) : setIsOpenCalendar(true)}}>
-                <S.Filter style={{ width: "200px" }}>
-                  <S.FilterInput>{tripDate.length === 0 ? `가는 날`: tripDate[0]}</S.FilterInput>
-                  <S.FilterBtn></S.FilterBtn>
-                </S.Filter>
-                <S.DateLine></S.DateLine>
-                <S.Filter style={{ width: "200px" }}>
-                  <S.FilterInput>{tripDate.length === 0 ? `오는 날`: tripDate[1]}</S.FilterInput>
-                  <S.FilterBtn></S.FilterBtn>
-                </S.Filter>
-              </S.DateFilterWrapper>
-              {isOpenCalendar &&(
-                <S.CalendarWrapper>
-                  <Calendar
-                    setIsOpenCalendar={setIsOpenCalendar}
-                    setTripDate={setTripDate}
-                    restrict={false}
-                  />
-                  
-                </S.CalendarWrapper>
-              )}
-            </S.FilterWrapper>
-
-            <S.FilterWrapper>
-              <S.FilterTitleWrapper>
-                <S.FilterTitleImg src="icon/user.png"></S.FilterTitleImg>
-                <S.FilterTitleTxt>인원</S.FilterTitleTxt>
-              </S.FilterTitleWrapper>
-              <S.FilterSelect>
-                <S.FilterMinusImg src="/icon/minus.png" onClick={(e) => setSelectedNum((prev) => prev <= 0 ? 0 : prev - 1)}></S.FilterMinusImg>
-                <S.FilterNum>{selectedNum <= 0 ? "선택" : `${selectedNum}명`}</S.FilterNum>
-                <S.FilterPlusImg src="/icon/plus.png" onClick={(e) => setSelectedNum((prev) => prev + 1)}></S.FilterPlusImg>
-              </S.FilterSelect>
-            </S.FilterWrapper>
-          </S.FilterFrontWrapper>
-
-            <S.FilterBackWrapper>
-              <S.FilterWrapper>
-                <S.FilterTitleWrapper>
-                  <S.FilterTitleImg src="icon/searchBlack.png"></S.FilterTitleImg>
-                  <S.FilterTitleTxt>검색</S.FilterTitleTxt>
-                </S.FilterTitleWrapper>
-                <S.Input 
-                  style={{ width: "925px" }} 
-                  placeholder="직접 입력"
-                  onChange={(e) => setKeyword(e.target.value)}
-                />
-              </S.FilterWrapper>
-            </S.FilterBackWrapper>
-            </S.FilterMiddleWrapper>
-            <S.FilterFindBtn onClick={onClcickFilterFind}>
-              <S.FilterFindBtnTxt>여행자 찾기</S.FilterFindBtnTxt>
-              <S.BtnArrow src="icon/arrow.png"></S.BtnArrow>
-            </S.FilterFindBtn>
-          </S.FilterMainWrapper>
-        </S.FindFilter>
       </S.Banner>
 
       <S.ContentWrapper>
         <S.ReviewTitleWrapper onClick={onClcickFilterFind}>
-          <S.FindTripylerTitle>함께 동행할 Trip’yler를 만나보세요</S.FindTripylerTitle>
+          <S.FindTripylerTitle>함께 동행할 TwithMe를 만나보세요</S.FindTripylerTitle>
           <S.BtnBigArrow src="icon/move.png"></S.BtnBigArrow>
         </S.ReviewTitleWrapper>
         <S.Review>
@@ -408,7 +295,7 @@ export default function Main() {
                     checkLogin();
                   } else {
                     if(!checkToken()){
-                      router.push(`/findTripyler/${res.tripylerId}`);
+                      router.push(`/findTwithme/${res.tripylerId}`);
                     }
                   }
                 }}
@@ -438,7 +325,7 @@ export default function Main() {
             } 
           }
         }}>
-          <S.FindTripylerTitle>Trip'yler들의 여행 후기를 만나보세요</S.FindTripylerTitle>
+          <S.FindTripylerTitle>TwithMe들의 여행 후기를 만나보세요</S.FindTripylerTitle>
           <S.BtnBigArrow src="icon/move.png"></S.BtnBigArrow>
         </S.ReviewTitleWrapper>
         <S.Review>
@@ -491,129 +378,16 @@ export default function Main() {
         <S.Banner>
         <S.BannerImgWrapper>
           <S.BannerTitle>
-            <S.TitleTxt>여행</S.TitleTxt>에
-            <S.TitleTxt> 스타일</S.TitleTxt>을
-            더하다
-          </S.BannerTitle>
           <S.BannerTxt>
-            함께 하고 싶은 여행자를 Trip’yle에서 바로 찾아보세요
+            함께 하고 싶은 여행자를 TwithMe에서 바로 찾아보세요
           </S.BannerTxt>
+          </S.BannerTitle>
         </S.BannerImgWrapper>
-        <S.FindFilter>
-          <S.FilterMainWrapper>
-            <S.FilterMiddleWrapper>
-            <S.FilterFrontWrapper>
-              <S.FilterWrapper>
-                <S.FilterTitleWrapper>
-                  <S.FilterTitleImg src="icon/location.png"></S.FilterTitleImg>
-                  <S.FilterTitleTxt>여행지</S.FilterTitleTxt>
-                  {isCountry && (
-                  <S.CountrySelectWrapper>
-                    <S.ContinentSelect>
-                      {destination.continent.map((des) => (
-                        <S.ContinentContent id={des.id} onClick={onOpenCountry} selected={selectedDestination.continent.name === des.name}>{des.name}</S.ContinentContent>
-                      ))}
-                    </S.ContinentSelect>
-                    <S.CountrySelect>
-                      {destination.country.map((des) => (
-                        <S.ContinentContent id={des.id} onClick={onOpenCity} selected={selectedDestination.country.name === des.name}>{des.name}</S.ContinentContent>
-                      ))}
-                    </S.CountrySelect>
-                    <S.CitySelect>
-                      {destination.city.map((des) => (
-                        <S.ContinentContent 
-                        id={des.id} 
-                        onClick={(e) => {
-                          setIsCountry(false); 
-                          setSelectedDestination(prev => ({
-                            ...prev,
-                            city: {id: e.target.id ,name: e.target.innerText}
-                          }));
-                          setShowDestination(prev => ({
-                            country: selectedDestination.country,
-                            city: e.target.innerText
-                          }))
-                        }}
-                        selected={selectedDestination.city.name === des.name}
-                        >{des.name}</S.ContinentContent>
-                      ))}
-                    </S.CitySelect>
-                  </S.CountrySelectWrapper>
-                )}
-                </S.FilterTitleWrapper>
-                <S.Filter style={{ width: "280px" }} onClick={onOpenDestination}>
-                  <S.FilterInput>{selectedDestination.city.name === "" ? "선택" : `${showDestination.country.name}, ${showDestination.city}`}</S.FilterInput>
-                  <S.FilterBtn></S.FilterBtn>
-                </S.Filter>
-                
-              </S.FilterWrapper>
-
-            <S.FilterWrapper style={{position: "relative"}}>
-              <S.FilterTitleWrapper>
-                <S.FilterTitleImg src="icon/calendar.png"></S.FilterTitleImg>
-                <S.FilterTitleTxt>일정</S.FilterTitleTxt>
-              </S.FilterTitleWrapper>
-              <S.DateFilterWrapper onClick={(e) => {isOpenCalendar ? setIsOpenCalendar(false) : setIsOpenCalendar(true)}}>
-                <S.Filter style={{ width: "200px" }}>
-                  <S.FilterInput>{tripDate.length === 0 ? `가는 날`: tripDate[0]}</S.FilterInput>
-                  <S.FilterBtn></S.FilterBtn>
-                </S.Filter>
-                <S.DateLine></S.DateLine>
-                <S.Filter style={{ width: "200px" }}>
-                  <S.FilterInput>{tripDate.length === 0 ? `오는 날`: tripDate[1]}</S.FilterInput>
-                  <S.FilterBtn></S.FilterBtn>
-                </S.Filter>
-              </S.DateFilterWrapper>
-              {isOpenCalendar &&(
-                <S.CalendarWrapper>
-                  <Calendar
-                    setIsOpenCalendar={setIsOpenCalendar}
-                    setTripDate={setTripDate}
-                    restrict={false}
-                  />
-                  
-                </S.CalendarWrapper>
-              )}
-            </S.FilterWrapper>
-
-            <S.FilterWrapper>
-              <S.FilterTitleWrapper>
-                <S.FilterTitleImg src="icon/user.png"></S.FilterTitleImg>
-                <S.FilterTitleTxt>인원</S.FilterTitleTxt>
-              </S.FilterTitleWrapper>
-              <S.FilterSelect>
-                <S.FilterMinusImg src="/icon/minus.png" onClick={(e) => setSelectedNum((prev) => prev <= 0 ? 0 : prev - 1)}></S.FilterMinusImg>
-                <S.FilterNum>{selectedNum <= 0 ? "선택" : `${selectedNum}명`}</S.FilterNum>
-                <S.FilterPlusImg src="/icon/plus.png" onClick={(e) => setSelectedNum((prev) => prev + 1)}></S.FilterPlusImg>
-              </S.FilterSelect>
-            </S.FilterWrapper>
-          </S.FilterFrontWrapper>
-
-            <S.FilterBackWrapper>
-              <S.FilterWrapper>
-                <S.FilterTitleWrapper>
-                  <S.FilterTitleImg src="icon/searchBlack.png"></S.FilterTitleImg>
-                  <S.FilterTitleTxt>검색</S.FilterTitleTxt>
-                </S.FilterTitleWrapper>
-                <S.Input 
-                  style={{ width: "925px" }} 
-                  placeholder="직접 입력"
-                  onChange={(e) => setKeyword(e.target.value)}
-                />
-              </S.FilterWrapper>
-            </S.FilterBackWrapper>
-            </S.FilterMiddleWrapper>
-            <S.FilterFindBtn onClick={onClcickFilterFind}>
-              <S.FilterFindBtnTxt>여행자 찾기</S.FilterFindBtnTxt>
-              <S.BtnArrow src="icon/arrow.png"></S.BtnArrow>
-            </S.FilterFindBtn>
-          </S.FilterMainWrapper>
-        </S.FindFilter>
       </S.Banner>
 
       <S.ContentWrapper>
         <S.ReviewTitleWrapper onClick={onClcickFilterFind}>
-          <S.FindTripylerTitle>함께 동행할 Trip’yler를 만나보세요</S.FindTripylerTitle>
+          <S.FindTripylerTitle>함께 동행할 TwithMe를 만나보세요</S.FindTripylerTitle>
           <S.BtnBigArrow src="icon/move.png"></S.BtnBigArrow>
         </S.ReviewTitleWrapper>
         <S.Review>
@@ -634,7 +408,7 @@ export default function Main() {
                     checkLogin();
                   } else {
                     if(!checkToken()){
-                      router.push(`/findTripyler/${res.tripylerId}`);
+                      router.push(`/findTwithme/${res.tripylerId}`);
                     }
                   }
                 }}
@@ -664,7 +438,7 @@ export default function Main() {
             } 
           }
         }}>
-          <S.FindTripylerTitle>Trip'yler들의 여행 후기를 만나보세요</S.FindTripylerTitle>
+          <S.FindTripylerTitle>TwithMe들의 여행 후기를 만나보세요</S.FindTripylerTitle>
           <S.BtnBigArrow src="icon/move.png"></S.BtnBigArrow>
         </S.ReviewTitleWrapper>
         <S.Review>

@@ -17,7 +17,7 @@ export default function SocialLogin() {
   return (
     <>
       <Box>
-        <Text>Trip'yle 가 처음이신가요?</Text>
+        <Text>TwithMe가 처음이신가요?</Text>
         <Button>
           <LinkUp href="/auth/join">Sign Up</LinkUp>
         </Button>

@@ -62,7 +62,7 @@ export default function FindTripylerWrite(props) {
 
   const fetchData = async () => {
     await axios
-      .get(`${apiPath}/tripyler/${tripylerId}`)
+      .get(`${apiPath}/twithme/${tripylerId}`)
       .then((res) => {
         const data = res.data.data;
         setData({ ...data });
@@ -110,7 +110,7 @@ export default function FindTripylerWrite(props) {
     const value = event.target.search.value;
 
     await axios
-      .get(`${apiPath}/tripyler/search?regionName=${value}`)
+      .get(`${apiPath}/twithme/search?regionName=${value}`)
       .then((res) => {
         setPlace({ ...res.data.data });
         setErrPlace("");
@@ -275,13 +275,13 @@ export default function FindTripylerWrite(props) {
       };
       const formData = new FormData();
       formData.append(
-        "tripylerCreateDto",
+        "twithmeCreateDto",
         new Blob([JSON.stringify(requestData)], { type: "application/json" })
       );
       formData.append("images", selectedImage);
 
       await axios
-        .post(apiPath + "/tripyler", formData, {
+        .post(apiPath + "/twithme", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             accept: "application/json",
@@ -289,7 +289,7 @@ export default function FindTripylerWrite(props) {
         })
         .then((res) => {
           alert("게시물이 등록되었습니다");
-          router.push("/findTripyler");
+          router.push("/findTwithme");
         })
         .catch((error) => console.error(error));
     } else {
@@ -326,13 +326,13 @@ export default function FindTripylerWrite(props) {
       };
       const formData = new FormData();
       formData.append(
-        "tripylerCreateDto",
+        "twithmeCreateDto",
         new Blob([JSON.stringify(requestData)], { type: "application/json" })
       );
       formData.append("images", selectedImage);
 
       await axios
-        .patch(apiPath + `/tripyler/${tripylerId}`, formData, {
+        .patch(apiPath + `/twithme/${tripylerId}`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             accept: "application/json",
@@ -340,7 +340,7 @@ export default function FindTripylerWrite(props) {
         })
         .then((res) => {
           alert(res.data.data);
-          router.push(`/findTripyler/${tripylerId}`);
+          router.push(`/findTwithme/${tripylerId}`);
         })
         .catch((err) => console.error(err));
     } else {
@@ -353,7 +353,7 @@ export default function FindTripylerWrite(props) {
       <S.TitleBanner>
         <S.TitleTxt>
           <S.Title>
-            Trip’yler 찾기 게시물 {props.isEdit ? "수정" : "작성"}
+          TwithMe 찾기 게시물 {props.isEdit ? "수정" : "작성"}
           </S.Title>
           <S.SubTitle>본인에게 가장 적합한 여행자를 찾아보세요</S.SubTitle>
         </S.TitleTxt>
@@ -451,7 +451,7 @@ export default function FindTripylerWrite(props) {
                   </S.WritableShortInput>
                 </S.InputInfoWrapper>
                 <S.InputInfoWrapper>
-                  <S.InputTitle>함께하는 Trip’yler</S.InputTitle>
+                  <S.InputTitle>함께하는 TwithMe</S.InputTitle>
                   <S.MidInput style={{ gap: "16px" }}>
                     {shownWithTripylerList.map((e) => (
                       <S.TripylerID key={e.id}>@{e.nickname}</S.TripylerID>

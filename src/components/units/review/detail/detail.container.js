@@ -1,5 +1,5 @@
 import { LoginState } from '@/States/LoginState';
-import FindTripylerBanner from "@/components/commons/Layout/findTripylerBanner";
+import FindTwithmeBanner from "@/components/commons/Layout/findTwithmeBanner";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -145,9 +145,9 @@ export default function TriplogDetail() {
 
   return (
     <>
-      <FindTripylerBanner
-        title="Trip'yler 찾기"
-        subTitle="함께 하고 싶은 여행자를 Trip’yle에서 바로 찾아보세요"
+      <FindTwithmeBanner
+        title="TwithMe 찾기"
+        subTitle="함께 하고 싶은 여행자를 TwithMe에서 바로 찾아보세요"
       />
       <S.ContentsLoc>
         <S.LocTxt>{data?.nickname}님의 여행후기</S.LocTxt>
@@ -183,7 +183,7 @@ export default function TriplogDetail() {
           <S.MidTopRightWrapper>
             <S.WithTripylerWrapper>
               <S.WithTripTitle>
-                동행 Trip’yler ({data.tripylerWithList?.length}명)
+                동행 TwithMe ({data.tripylerWithList?.length}명)
               </S.WithTripTitle>
               <S.WithTripProfileList>
                 {data.tripylerWithList
@@ -207,7 +207,7 @@ export default function TriplogDetail() {
               </S.WithTripProfileList>
               {isOpenWithTripList && (
                 <S.WithTripList>
-                  <S.WithTripListTitle>Trip’yler 리스트</S.WithTripListTitle>
+                  <S.WithTripListTitle>TwithMe 리스트</S.WithTripListTitle>
                   <S.WithTripListWrapper>
                     {data.tripylerWithList?.map((el) => (
                       <S.WithTripListItem>

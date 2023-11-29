@@ -6,7 +6,7 @@ import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import * as S from "./main.styles";
 
 import ReviewCard from "@/components/commons/Card/Main/ReviewCard/ReviewMain";
-import FindTripylerBanner from "@/components/commons/Layout/findTripylerBanner";
+import FindTwithmeBanner from "@/components/commons/Layout/findTwithmeBanner";
 
 export default function ReviewMain() {
   const [isLoggedIn, setIsLoggedIn] = useRecoilState(LoginState);
@@ -220,9 +220,9 @@ export default function ReviewMain() {
 
   return (
     <>
-      <FindTripylerBanner
-        title="Trip'yler 여행 후기"
-        subTitle="Trip'yler가 함께한 여행 후기를 구경해보세요!"
+      <FindTwithmeBanner
+        title="TwithMe 여행 후기"
+        subTitle="TwithMe가 함께한 여행 후기를 구경해보세요!"
       />
       {isOpen ? (
         <S.Banner>
@@ -468,7 +468,7 @@ export default function ReviewMain() {
       <S.ContentWrapper>
         <S.FindTripylerTitleWrapper>
           <S.FindTripylerTitle>
-            <div>Trip’yler의 인기 여행 후기</div>
+            <div>TwithMe의 인기 여행 후기</div>
             <S.FindTripylerWriteBtn onClick={() => {
               if(!isLoggedIn){
                 checkLogin();

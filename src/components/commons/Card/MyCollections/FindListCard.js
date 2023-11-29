@@ -11,7 +11,7 @@ export default function MyCollectionsFindCard (props) {
   }, [props])
     return(
        <>
-        <CollectionReviewWrapper  style={{'cursor': 'pointer'}} onClick={(e) => router.push(`/findTripyler/${props.data.tripylerId}`)}>
+        <CollectionReviewWrapper  style={{'cursor': 'pointer'}} onClick={(e) => router.push(`/findTwithme/${props.data.tripylerId}`)}>
             <CollectionReviewDes>{props.data.regionName}</CollectionReviewDes>
             <CountryWrapper>
                 <ReviewIcon src="/icon/location.png"></ReviewIcon>
