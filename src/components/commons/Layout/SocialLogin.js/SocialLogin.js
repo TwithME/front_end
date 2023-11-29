@@ -1,8 +1,11 @@
 import styled from "@emotion/styled";
 import Image from "next/image";
 
-export default function Oauth() {
-  const KAKAO_AUTH_URI = ``;
+
+import { KAKAO_REDIRECT_URL } from "@/OAuth/kakao.js";
+
+export default function SocialLogin() {
+  const KAKAO_AUTH_URI = `https://kauth.kakao.com/oauth/authorize?client_id=9dd98e572c5ca5fb5da7011d9ef2f27f&redirect_uri=${KAKAO_REDIRECT_URL}&response_type=code`;
   const onKaKaoHandler = async () => {
     try {
       window.location.href = KAKAO_AUTH_URI;
@@ -15,6 +18,9 @@ export default function Oauth() {
     <>
       <Box>
         <Text>Trip'yle 가 처음이신가요?</Text>
+        <Button>
+          <LinkUp href="/auth/join">Sign Up</LinkUp>
+        </Button>
       </Box>
       <Box>
         <span>⎼⎼⎼⎼⎼⎼⎼⎼⎼⎼⎼⎼⎼⎼⎼</span>
