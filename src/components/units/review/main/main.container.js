@@ -466,10 +466,10 @@ export default function ReviewMain() {
       )}
 
       <S.ContentWrapper>
-        <S.FindTripylerTitleWrapper>
-          <S.FindTripylerTitle>
+        <S.FindBoardTitleWrapper>
+          <S.FindBoardTitle>
             <div>TwithMe의 인기 여행 후기</div>
-            <S.FindTripylerWriteBtn onClick={() => {
+            <S.FindBoardWriteBtn onClick={() => {
               if(!isLoggedIn){
                 checkLogin();
               } else{
@@ -479,10 +479,10 @@ export default function ReviewMain() {
               }
             }}>
               후기 작성 〉
-            </S.FindTripylerWriteBtn>
-          </S.FindTripylerTitle>
+            </S.FindBoardWriteBtn>
+          </S.FindBoardTitle>
 
-          <S.FindTripylerFilterTwo
+          <S.FindBoardFilterTwo
             onChange={(e) => {
               setOption(e.target.value);
               onClcickFilterFind();
@@ -492,34 +492,34 @@ export default function ReviewMain() {
             <option value="2">좋아요 순</option>
             <option value="3">댓글 순</option>
             <option value="4">조회수 순</option>
-          </S.FindTripylerFilterTwo>
-        </S.FindTripylerTitleWrapper>
+          </S.FindBoardFilterTwo>
+        </S.FindBoardTitleWrapper>
         <S.Review>
           {reviewList.length === 0 ? (
-            <S.FindTripylerNoContent>
+            <S.FindBoardNoContent>
               <S.NoContent>조건에 맞는 게시 글이 존재하지 않습니다</S.NoContent>
-            </S.FindTripylerNoContent>
+            </S.FindBoardNoContent>
           ) : (
-          <S.FindTripylerContent>
+          <S.FindBoardContent>
             {reviewList
               .map((card, idx) => {
               if(parseInt(idx/5) === page - 1)
               return(
               <ReviewCard 
-                id={card.tripylerId} 
+                id={card.boardId} 
                 info={card}
                 onClick={() => {
                   if(!isLoggedIn){
                     checkLogin();
                   } else{
                     if(!checkToken()){
-                      router.push(`/review/${card.tripylerId}`);
+                      router.push(`/review/${card.boardId}`);
                     }
                   }
                 }}
               />
             )})}
-          </S.FindTripylerContent>
+          </S.FindBoardContent>
           )}
 
           {reviewList.length !== 0 && (

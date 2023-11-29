@@ -418,14 +418,14 @@ export const Review = styled.div`
   width: 1440px;
 `;
 
-export const FindTripylerContent = styled.div`
+export const FindBoardContent = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   /* margin-left: 20px; */
 `;
 
-export const FindTripylerNoContent = styled(FindTripylerContent)`
+export const FindBoardNoContent = styled(FindBoardContent)`
   height: 200px;
   margin: auto;
   justify-content: center;
@@ -442,7 +442,7 @@ export const ContentWrapper = styled.div`
   justify-content: center;
 `;
 
-export const FindTripylerTitle = styled.div`
+export const FindBoardTitle = styled.div`
   width: 1260px;
   height: 64px;
 
@@ -461,7 +461,7 @@ export const FindTripylerTitle = styled.div`
   justify-content: space-between;
 `;
 
-export const FindTripylerWriteBtn = styled.div`
+export const FindBoardWriteBtn = styled.div`
   background-color: #ffffff;
   color: #66d2e8;
   margin-right: 15px;
@@ -471,7 +471,7 @@ export const FindTripylerWriteBtn = styled.div`
   cursor: pointer;
 `;
 
-export const FindTripylerTitleWrapper = styled.div`
+export const FindBoardTitleWrapper = styled.div`
   display: flex;
   flex-direction: row;
 
@@ -480,30 +480,7 @@ export const FindTripylerTitleWrapper = styled.div`
   justify-content: center;
 `;
 
-export const FindTripylerFilterOne = styled.select`
-  border: 2px solid #00b4d8;
-  border-radius: 20px;
-  width: 111px;
-  height: 50px;
-  margin-left: 20px;
-  text-align: center;
-  font-size: 15px;
-  color: #00b4d8;
-  cursor: pointer;
-
-  &:focus {
-    border: 2px solid #00b4d8;
-  }
-`;
-
-export const FindTripylerOptionOne = styled.option`
-  border: 2px solid #00b4d8;
-  border-radius: 20px;
-  width: 111px;
-  height: 50px;
-`;
-
-export const FindTripylerFilterTwo = styled.select`
+export const FindBoardFilterTwo = styled.select`
   border: 2px solid #00b4d8;
   border-radius: 20px;
   width: 111px;

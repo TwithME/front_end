@@ -152,7 +152,7 @@ export const MidTopRightWrapper = styled.div`
   gap: 100px;
 `;
 
-export const WithTripylerWrapper = styled.div`
+export const WithBoardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -267,7 +267,7 @@ export const WithTripListID = styled.div`
   }
 `;
 
-export const TripylerInfoWrapper = styled.div`
+export const BoardInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;

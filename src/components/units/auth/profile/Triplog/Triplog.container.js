@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 
-import * as S from "./Triplog.styles";
-import Modal from "../../../../commons/Modal/Modal";
-import axios from "axios";
 import FindCard from "@/components/commons/Card/Triplog/FindCard";
-import ReviewCard from "@/components/commons/Card/Triplog/ReviewCard"
+import ReviewCard from "@/components/commons/Card/Triplog/ReviewCard";
+import * as S from "./Triplog.styles";
 
 export default function Triplog(props) {
 
@@ -38,11 +36,11 @@ export default function Triplog(props) {
     </S.CollectionContentTitleWrapper>
     {selectedCategory === 0 ? (
       <S.CollectionContent>
-        {props.TripylersData.map((e, i) => (<FindCard id={e.tripylerId} info={e}/>))}
+        {props.BoardsData.map((e, i) => (<FindCard id={e.boardId} info={e}/>))}
       </S.CollectionContent>
     ) : (
       <S.CollectionContent>
-        {props.reviewData.map((e, i) => (<ReviewCard id={e.tripylerId} info={e}/>))}
+        {props.reviewData.map((e, i) => (<ReviewCard id={e.boardId} info={e}/>))}
         
       </S.CollectionContent>
     )}

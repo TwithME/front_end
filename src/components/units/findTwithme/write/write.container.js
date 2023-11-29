@@ -5,10 +5,10 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import * as S from "./write.style";
 
-export default function FindTripylerWrite(props) {
+export default function FindBoardWrite(props) {
   const [isOpenPlaceModal, setIsOpenPlaceModal] = useState(false);
   const [isOpenStyleModal, setIsOpenStyleModal] = useState(false);
-  const [isOpneWithTripyler, setIsOpenWithTripyler] = useState(false);
+  const [isOpneWithBoard, setIsOpenWithBoard] = useState(false);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [totalPeopleNum, setTotalPeopleNum] = useState(2);
@@ -20,7 +20,7 @@ export default function FindTripylerWrite(props) {
 
   const apiPath = "http://semtle.catholic.ac.kr:8081";
   const router = useRouter();
-  const { tripylerId } = router.query;
+  const { boardId } = router.query;
 
   const onClickMoreBtn = (event) => {
     const stepNum = event.currentTarget.id;
@@ -41,8 +41,8 @@ export default function FindTripylerWrite(props) {
     setIsOpenStyleModal(true);
   };
 
-  const onClickWithTripyler = () => {
-    setIsOpenWithTripyler(true);
+  const onClickWithTBoard = () => {
+    setIsOpenWithBoard(true);
   };
 
   const onClickUpDownBtn = (event) => {
@@ -62,7 +62,7 @@ export default function FindTripylerWrite(props) {
 
   const fetchData = async () => {
     await axios
-      .get(`${apiPath}/twithme/${tripylerId}`)
+      .get(`${apiPath}/twithme/${boardId}`)
       .then((res) => {
         const data = res.data.data;
         setData({ ...data });
@@ -73,8 +73,8 @@ export default function FindTripylerWrite(props) {
         setImageUrl(data.image);
         setCommaPrice(data.estimatedPrice);
         setEstimatedPrice(data.estimatedPrice);
-        setShownWithTripylerList([
-          ...data.tripylerWithList?.map((el) => ({
+        setShownWithBoardList([
+          ...data.boardWithList?.map((el) => ({
             id: el.userId,
             nickname: el.nickname,
           })),
@@ -98,8 +98,8 @@ export default function FindTripylerWrite(props) {
     axios.defaults.headers.common["x-auth-token"] =
       window.localStorage.getItem("login-token");
 
-    props.isEdit && tripylerId && fetchData();
-  }, [tripylerId]);
+    props.isEdit && boardId && fetchData();
+  }, [boardId]);
 
   // 여행지역 검색
   const [place, setPlace] = useState({});
@@ -199,9 +199,9 @@ export default function FindTripylerWrite(props) {
   };
 
   // 아이디 검색
-  const [errTripyler, setErrTripyler] = useState("");
-  const [withTripylerList, setWithTripylerList] = useState([]);
-  const [shownWithTripylerList, setShownWithTripylerList] = useState([]);
+  const [errBoard, setErrBoard] = useState("");
+  const [withBoardList, setWithBoardList] = useState([]);
+  const [shownWithBoardList, setShownWithBoardList] = useState([]);
 
   const onSubmitFindID = async (event) => {
     event.preventDefault();
@@ -210,39 +210,39 @@ export default function FindTripylerWrite(props) {
       .get(`${apiPath}/review/find-user?username=${value}`)
       .then((res) => {
         if (res.data.data > 0) {
-          if (withTripylerList.map((el) => el.nickname).includes(value)) {
-            setErrTripyler("이미 포함된 아이디입니다.");
+          if (withBoardList.map((el) => el.nickname).includes(value)) {
+            setErrBoard("이미 포함된 아이디입니다.");
           } else {
-            setWithTripylerList((prev) => [
+            setWithBoardList((prev) => [
               ...prev,
               {
                 id: res.data.data,
                 nickname: value,
               },
             ]);
-            setErrTripyler("");
+            setErrBoard("");
           }
         } else {
-          setErrTripyler("해당 아이디는 존재하지 않습니다.");
+          setErrBoard("해당 아이디는 존재하지 않습니다.");
         }
       })
       .catch((err) => console.error(err));
     event.target.reset();
   };
 
-  const handleSubmitWithTripyler = () => {
-    setShownWithTripylerList([...withTripylerList]);
-    setIsOpenWithTripyler(false);
+  const handleSubmitWithBoard = () => {
+    setShownWithBoardList([...withBoardList]);
+    setIsOpenWithBoard(false);
   };
 
-  const handleCloseWithTripyler = () => {
-    setWithTripylerList([...shownWithTripylerList]);
-    setIsOpenWithTripyler(false);
+  const handleCloseWithBoard = () => {
+    setWithBoardList([...shownWithBoardList]);
+    setIsOpenWithBoard(false);
   };
 
   const handleDelID = (event) => {
-    setWithTripylerList(
-      withTripylerList.filter((e) => e.id !== parseInt(event.target.id))
+    setWithBoardList(
+      withBoardList.filter((e) => e.id !== parseInt(event.target.id))
     );
   };
 
@@ -271,7 +271,7 @@ export default function FindTripylerWrite(props) {
         regionId: shownPlace.regionId,
         totalPeopleNum,
         estimatedPrice,
-        tripylerWithList: [...shownWithTripylerList.map((el) => el.nickname)],
+        boardWithList: [...shownWithBoardList.map((el) => el.nickname)],
       };
       const formData = new FormData();
       formData.append(
@@ -322,7 +322,7 @@ export default function FindTripylerWrite(props) {
         regionId: shownPlace.regionId,
         totalPeopleNum,
         estimatedPrice,
-        tripylerWithList: [...shownWithTripylerList.map((el) => el.nickname)],
+        boardWithList: [...shownWithBoardList.map((el) => el.nickname)],
       };
       const formData = new FormData();
       formData.append(
@@ -332,7 +332,7 @@ export default function FindTripylerWrite(props) {
       formData.append("images", selectedImage);
 
       await axios
-        .patch(apiPath + `/twithme/${tripylerId}`, formData, {
+        .patch(apiPath + `/twithme/${boardId}`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             accept: "application/json",
@@ -340,7 +340,7 @@ export default function FindTripylerWrite(props) {
         })
         .then((res) => {
           alert(res.data.data);
-          router.push(`/findTwithme/${tripylerId}`);
+          router.push(`/findTwithme/${boardId}`);
         })
         .catch((err) => console.error(err));
     } else {
@@ -453,11 +453,11 @@ export default function FindTripylerWrite(props) {
                 <S.InputInfoWrapper>
                   <S.InputTitle>함께하는 TwithMe</S.InputTitle>
                   <S.MidInput style={{ gap: "16px" }}>
-                    {shownWithTripylerList.map((e) => (
-                      <S.TripylerID key={e.id}>@{e.nickname}</S.TripylerID>
+                    {shownWithBoardList.map((e) => (
+                      <S.BoardID key={e.id}>@{e.nickname}</S.BoardID>
                     ))}
                   </S.MidInput>
-                  <S.InputBtn onClick={onClickWithTripyler}>
+                  <S.InputBtn onClick={onClickWithTBoard}>
                     아이디 검색
                   </S.InputBtn>
                 </S.InputInfoWrapper>
@@ -604,7 +604,7 @@ export default function FindTripylerWrite(props) {
         />
       )}
 
-      {isOpneWithTripyler && (
+      {isOpneWithBoard && (
         <S.ModalOverlay>
           <S.Modal>
             <S.ModalTitle>아이디 검색</S.ModalTitle>
@@ -618,19 +618,19 @@ export default function FindTripylerWrite(props) {
                 <img src="/icon/search.png" />
               </S.ModalInputBtn>
             </S.ModalInputWrapper>
-            <S.ModalHashtagError>{errTripyler}</S.ModalHashtagError>
-            <S.ModalTripylerWrapper>
-              {withTripylerList.map((el) => (
-                <S.ModalTripylerID onClick={handleDelID} key={el.id} id={el.id}>
+            <S.ModalHashtagError>{errBoard}</S.ModalHashtagError>
+            <S.ModalBoardWrapper>
+              {withBoardList.map((el) => (
+                <S.ModalBoardID onClick={handleDelID} key={el.id} id={el.id}>
                   @{el.nickname}
-                </S.ModalTripylerID>
+                </S.ModalBoardID>
               ))}
-            </S.ModalTripylerWrapper>
+            </S.ModalBoardWrapper>
             <S.ModalBtnWrapper>
-              <S.ModalCancelBtn onClick={handleCloseWithTripyler}>
+              <S.ModalCancelBtn onClick={handleCloseWithBoard}>
                 취소
               </S.ModalCancelBtn>
-              <S.ModalSubmitBtn onClick={handleSubmitWithTripyler}>
+              <S.ModalSubmitBtn onClick={handleSubmitWithBoard}>
                 확인
               </S.ModalSubmitBtn>
             </S.ModalBtnWrapper>

@@ -4,10 +4,10 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import * as S from "./applyForm.style";
 
-export default function FindTripylerApply() {
+export default function FindBoardApply() {
   const router = useRouter();
   const apiPath = "http://semtle.catholic.ac.kr:8081";
-  const { tripylerId } = router.query;
+  const { boardId } = router.query;
 
   const [isChecked1, setIsChecked1] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
@@ -51,11 +51,11 @@ export default function FindTripylerApply() {
       await axios
         .post(apiPath + "/twithme/apply", {
           content,
-          tripylerId,
+          boardId,
         })
         .then((res) => {
           alert("신청이 완료되었습니다.");
-          router.push(`/findTwithme/${tripylerId}`);
+          router.push(`/findTwithme/${boardId}`);
         })
         .catch((err) => console.error(err));
     }

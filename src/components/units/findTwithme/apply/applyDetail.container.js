@@ -4,10 +4,10 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import * as S from "./applyDetail.style";
 
-export default function FindTripylerApplyDetail() {
+export default function FindBoardApplyDetail() {
   const router = useRouter();
   const apiPath = "http://semtle.catholic.ac.kr:8081";
-  const { tripylerId, applyId } = router.query;
+  const { boardId, applyId } = router.query;
 
   const [isAccept, setIsAccept] = useState(false);
   const [data, setData] = useState({});
@@ -39,7 +39,7 @@ export default function FindTripylerApplyDetail() {
       .get(`${apiPath}/twithme/apply/refuse/${applyId}`)
       .then((res) => {
         alert("거절");
-        router.push(`/findTwithme/${tripylerId}`);
+        router.push(`/findTwithme/${boardId}`);
       })
       .catch((err) => console.error(err));
   };
@@ -63,7 +63,7 @@ export default function FindTripylerApplyDetail() {
       })
       .then((res) => {
         alert("전송이 완료되었습니다.");
-        router.push(`/findTwithme/${tripylerId}`);
+        router.push(`/findTwithme/${boardId}`);
       })
       .catch((err) => console.error(err));
     event.target.reset();

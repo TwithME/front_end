@@ -1,8 +1,7 @@
+import { useState } from "react";
 import * as S from "./contact.styles";
-import axios from "axios";
-import { useEffect, useState } from "react";
 
-export default function ContactTripyle() {
+export default function ContactTwithme() {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [email, setEmail] = useState("");

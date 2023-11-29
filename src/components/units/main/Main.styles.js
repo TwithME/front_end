@@ -357,7 +357,7 @@ export const Review = styled.div`
   width: 1400px;
 `;
 
-export const FindTripylerContent = styled.div`
+export const FindBoardContent = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -365,7 +365,7 @@ export const FindTripylerContent = styled.div`
   // margin-left: 20px;
 `;
 
-export const FindTripylerTitleWrapper = styled.div`
+export const FindBoardTitleWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -432,13 +432,13 @@ export const AdTitle = styled.div`
   white-space: nowrap;
 `;
 
-export const FindTripylerTitle = styled(FindTripylerTitleWrapper)`
+export const FindBoardTitle = styled(FindBoardTitleWrapper)`
   background-color: #fff;
   border-top: 2px solid #9AB3F5;
   border-bottom: 2px solid #9AB3F5;
 `;
 
-export const ReviewTitleWrapper = styled(FindTripylerTitleWrapper)`
+export const ReviewTitleWrapper = styled(FindBoardTitleWrapper)`
   background-color: #fff;
   border-top: 2px solid #9AB3F5;
   border-bottom: 2px solid #9AB3F5;

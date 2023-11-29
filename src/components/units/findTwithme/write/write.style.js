@@ -260,7 +260,7 @@ export const Hashtag = styled.div`
   font-weight: 600;
 `;
 
-export const TripylerID = styled.div`
+export const BoardID = styled.div`
   padding: 0px 20px;
   height: 34px;
   border: 1px solid #90e0ef;
@@ -511,13 +511,13 @@ export const ModalSubmitBtn = styled(ModalCancelBtn)`
   border: none;
 `;
 
-export const ModalTripylerWrapper = styled.div`
+export const ModalBoardWrapper = styled.div`
   height: 27px;
   display: flex;
   /* margin-bottom: 10px; */
   gap: 10.5px;
 `;
 
-export const ModalTripylerID = styled(TripylerID)`
+export const ModalBoardID = styled(BoardID)`
   cursor: pointer;
 `;

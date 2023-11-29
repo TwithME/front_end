@@ -5,7 +5,7 @@ export default function TriplogReviewCard (props) {
   const router = useRouter();
     return(
         <ReviewCard style={{'cursor': 'pointer'}} onClick={(e) => router.push(`/review/${props.info.reviewId}`)}>
-            <ReviewCardTitle>{props.info.tripylerTitle}</ReviewCardTitle>
+            <ReviewCardTitle>{props.info.boardTitle}</ReviewCardTitle>
             <ReviewCardImgWrapper>
                 {props.info.imageUrls.map((e, idx) => {
                     if(0 <= idx && idx < 3){
@@ -13,7 +13,7 @@ export default function TriplogReviewCard (props) {
                 })}
 
             </ReviewCardImgWrapper>
-            <ReviewCardContent>{props.info.tripylerTitle}</ReviewCardContent>
+            <ReviewCardContent>{props.info.boardTitle}</ReviewCardContent>
             <ReviewCardLine></ReviewCardLine>
             <ReviewCardFooter>
                 <ReviewCardDesWrapper>

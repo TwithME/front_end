@@ -1,9 +1,8 @@
+import { useEffect, useState } from "react";
 import * as S from "./introduce.styles";
-import axios from "axios";
-import { useEffect, useState, useRef } from "react";
 
 
-export default function IntroduceTripyle() {
+export default function IntroduceTwithme() {
     const [scr, setScr] = useState(0);
 
     useEffect(() => {

@@ -37,13 +37,13 @@ export default function TriplogWrite(props) {
         setContent(data.reviewContent);
         setOneLine(data.reviewOneLine);
         setSelectedInfo({
-          title: data.tripylerTitle,
+          title: data.boardTitle,
           startDate: data.startDate,
           endDate: data.endDate,
           nationName: data.nationName,
           regionName: data.regionName,
-          tripylerId: data.tripylerId,
-          tripylerWithList: [...data.tripylerWithList],
+          boardId: data.boardId,
+          boardWithList: [...data.boardWithList],
         });
         setImageList([...data.reviewImageList.map((el) => ({ url: el }))]);
       })
@@ -124,9 +124,9 @@ export default function TriplogWrite(props) {
   };
 
   const onClickSubmitBtn = async () => {
-    if (selectedInfo.tripylerId && title && content && oneLine) {
+    if (selectedInfo.boardId && title && content && oneLine) {
       const requestData = {
-        tripylerId: selectedInfo.tripylerId,
+        boardId: selectedInfo.boardId,
         title,
         content,
         oneLine,
@@ -169,9 +169,9 @@ export default function TriplogWrite(props) {
 
   // 수정완료 Btn
   const onClickEditBtn = async () => {
-    if (selectedInfo.tripylerId && title && content && oneLine) {
+    if (selectedInfo.boardId && title && content && oneLine) {
       const requestData = {
-        tripylerId: selectedInfo.tripylerId,
+        boardId: selectedInfo.boardId,
         title,
         content,
         oneLine,
@@ -238,7 +238,7 @@ export default function TriplogWrite(props) {
                     <S.CmbBoxList>
                       {tripList.map((el, idx) => (
                         <S.CmbBoxListItem
-                          key={el.tripylerId}
+                          key={el.boardId}
                           onClick={onClickCmbBoxItem}
                           id={idx}
                         >
@@ -271,9 +271,9 @@ export default function TriplogWrite(props) {
                     <S.InfoBoxTitle>동행 TwithMe</S.InfoBoxTitle>
 
                     <S.WithTripProfileList>
-                      {selectedInfo.tripylerWithList ? (
+                      {selectedInfo.boardWithList ? (
                         <>
-                          {selectedInfo.tripylerWithList
+                          {selectedInfo.boardWithList
                             ?.filter((el, idx) => idx < 4)
                             .map((el, idx) => (
                               <S.WithTripProfileWrapper
@@ -288,9 +288,9 @@ export default function TriplogWrite(props) {
                                 />
                               </S.WithTripProfileWrapper>
                             ))}
-                          {selectedInfo.tripylerWithList.length > 4 && (
+                          {selectedInfo.boardWithList.length > 4 && (
                             <S.WithTripMoreBox onClick={onClickWithTrip}>
-                              +{selectedInfo.tripylerWithList.length - 4}
+                              +{selectedInfo.boardWithList.length - 4}
                             </S.WithTripMoreBox>
                           )}
                         </>
@@ -304,7 +304,7 @@ export default function TriplogWrite(props) {
                         TwithMe 리스트
                         </S.WithTripListTitle>
                         <S.WithTripListWrapper>
-                          {selectedInfo.tripylerWithList.map((el) => (
+                          {selectedInfo.boardWithList.map((el) => (
                             <S.WithTripListItem>
                               <S.WithTripListProfile>
                                 <S.Image
