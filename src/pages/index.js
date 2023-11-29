@@ -1,11 +1,12 @@
-import { Inter } from 'next/font/google'
+import { LoginState } from '@/States/LoginState';
+import { useRecoilValue } from 'recoil';
+import Main from '../components/units/main/Main.container';
 
-const inter = Inter({ subsets: ['latin'] })
-
-export default function Home() {
-  return (
-    <>
-      main page
-    </>
-  )
+export default function MainPage() {
+    const loginState = useRecoilValue(LoginState);
+    return(
+        <>
+            {loginState ? <Main login></Main> : <Main></Main>}
+        </>
+    )
 }
