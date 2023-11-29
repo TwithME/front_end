@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export default function FindTripylerBanner(props) {
+export default function FindTwithmeBanner(props) {
   return (
     <>
       <Banner>

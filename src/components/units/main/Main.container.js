@@ -7,7 +7,6 @@ import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import * as S from "./Main.styles";
 
 import PreviewCard from "@/components/commons/Card/Preview/Preview";
-import Calendar from "@/components/commons/Tools/Calendar";
 import FindCard from '../../commons/Card/Main/FindCard/FindCard';
 import ReviewComponent from '../../commons/Card/Main/ReviewCard/Review';
 
@@ -261,7 +260,6 @@ export default function Main() {
   }, [adverIdx]);
   return (
     <>
-    <Desktop>
       <S.Banner>
         <S.BannerImgWrapper>
           <S.BannerTitle>
@@ -274,20 +272,20 @@ export default function Main() {
 
       <S.ContentWrapper>
         <S.ReviewTitleWrapper onClick={onClcickFilterFind}>
-          <S.FindTripylerTitle>함께 동행할 TwithMe를 만나보세요</S.FindTripylerTitle>
+          <S.FindBoardTitleWrapper>함께 동행할 TwithMe를 만나보세요</S.FindBoardTitleWrapper>
           <S.BtnBigArrow src="icon/move.png"></S.BtnBigArrow>
         </S.ReviewTitleWrapper>
         <S.Review>
           <S.SubTitleWrapper>
             <S.SubTitle><img src="/icon/location.png" width="25px" height="25px" /> 인기 여행지</S.SubTitle>
           </S.SubTitleWrapper>
-          <S.FindTripylerContent>
+          <S.FindBoardContent>
             {response.map((res, idx) => {
             if(idx >= 0 && idx < 6)
             { return (
               <FindCard 
-                key={res.tripylerId} 
-                id={res.tripylerId} 
+                key={res.boardId} 
+                id={res.boardId} 
                 idx={idx}
                 info={res}
                 onClick={() => {
@@ -295,13 +293,13 @@ export default function Main() {
                     checkLogin();
                   } else {
                     if(!checkToken()){
-                      router.push(`/findTwithme/${res.tripylerId}`);
+                      router.push(`/findTwithme/${res.boardId}`);
                     }
                   }
                 }}
               />
             )}})}
-          </S.FindTripylerContent>
+          </S.FindBoardContent>
         </S.Review>
       </S.ContentWrapper>
       
@@ -325,14 +323,14 @@ export default function Main() {
             } 
           }
         }}>
-          <S.FindTripylerTitle>TwithMe들의 여행 후기를 만나보세요</S.FindTripylerTitle>
+          <S.FindBoardTitle>TwithMe들의 여행 후기를 만나보세요</S.FindBoardTitle>
           <S.BtnBigArrow src="icon/move.png"></S.BtnBigArrow>
         </S.ReviewTitleWrapper>
         <S.Review>
           <S.SubTitleWrapper>
             <S.SubTitle><img src="/icon/location.png" width="25px" height="25px" /> 인기 여행 후기</S.SubTitle>
           </S.SubTitleWrapper> 
-        <S.FindTripylerContent>
+        <S.FindBoardContent>
           {reviewList.map((e, i) => {
             if(i >= 0 && i < 6)
             { return (
@@ -351,7 +349,7 @@ export default function Main() {
                 }}
               />
           )}})}
-          </S.FindTripylerContent>
+          </S.FindBoardContent>
           
         </S.Review>
       </S.ContentWrapper>
@@ -371,120 +369,6 @@ export default function Main() {
             )}
         })}
       </S.AdWrapper>
-      </Desktop>
-
-      {/* 모바일 */}
-      <>
-        <S.Banner>
-        <S.BannerImgWrapper>
-          <S.BannerTitle>
-          <S.BannerTxt>
-            함께 하고 싶은 여행자를 TwithMe에서 바로 찾아보세요
-          </S.BannerTxt>
-          </S.BannerTitle>
-        </S.BannerImgWrapper>
-      </S.Banner>
-
-      <S.ContentWrapper>
-        <S.ReviewTitleWrapper onClick={onClcickFilterFind}>
-          <S.FindTripylerTitle>함께 동행할 TwithMe를 만나보세요</S.FindTripylerTitle>
-          <S.BtnBigArrow src="icon/move.png"></S.BtnBigArrow>
-        </S.ReviewTitleWrapper>
-        <S.Review>
-          <S.SubTitleWrapper>
-            <S.SubTitle><img src="/icon/location.png" width="25px" height="25px" /> 인기 여행지</S.SubTitle>
-          </S.SubTitleWrapper>
-          <S.FindTripylerContent>
-            {response.map((res, idx) => {
-            if(idx >= 0 && idx < 6)
-            { return (
-              <FindCard 
-                key={res.tripylerId} 
-                id={res.tripylerId} 
-                idx={idx}
-                info={res}
-                onClick={() => {
-                  if(!isLoggedIn) {
-                    checkLogin();
-                  } else {
-                    if(!checkToken()){
-                      router.push(`/findTwithme/${res.tripylerId}`);
-                    }
-                  }
-                }}
-              />
-            )}})}
-          </S.FindTripylerContent>
-        </S.Review>
-      </S.ContentWrapper>
-      
-      <S.ReviewBannerWrapper>
-        <S.ReviewBannerImgOneWrapper>
-          <S.ReviewBannerImgOne src="/img/city1.avif"/>
-        </S.ReviewBannerImgOneWrapper>
-        <S.ReviewBannerImgTwoWrapper>
-          <S.ReviewBannerImgTwo src="/img/city2.jpg"/>
-        </S.ReviewBannerImgTwoWrapper>
-        <S.PreviewWrapper>
-          <PreviewCard/>
-        </S.PreviewWrapper>
-      </S.ReviewBannerWrapper>
-
-      <S.ContentWrapper>
-        <S.ReviewTitleWrapper onClick={(e) => {
-          if(isLoggedIn) {
-            if(!checkToken()) {
-              router.push("/review")
-            } 
-          }
-        }}>
-          <S.FindTripylerTitle>TwithMe들의 여행 후기를 만나보세요</S.FindTripylerTitle>
-          <S.BtnBigArrow src="icon/move.png"></S.BtnBigArrow>
-        </S.ReviewTitleWrapper>
-        <S.Review>
-          <S.SubTitleWrapper>
-            <S.SubTitle><img src="/icon/location.png" width="25px" height="25px" /> 인기 여행 후기</S.SubTitle>
-          </S.SubTitleWrapper> 
-        <S.FindTripylerContent>
-          {reviewList.map((e, i) => {
-            if(i >= 0 && i < 6)
-            { return (
-              <ReviewComponent 
-                key={i} 
-                idx={i} 
-                info={e}
-                onClick={() => {
-                  if(!isLoggedIn) {
-                    checkLogin();
-                  } else {
-                    if(!checkToken()){
-                      router.push(`/review/${e.reviewId}`);
-                    }
-                  }
-                }}
-              />
-          )}})}
-          </S.FindTripylerContent>
-          
-        </S.Review>
-      </S.ContentWrapper>
-
-      <S.AdWrapper style={{'cursor': 'pointer'}}>
-        {advertiseArr.map((e, i) => {
-          if(i === adverIdx){
-            return (
-              <S.AdBannerWrapper>
-                <S.AdImg src={e.img} key={i}/>
-                <S.AdTitleWrapper>
-                  {e.title.map((title, j) => (
-                    <S.AdTitle idx={j} style={{ top : `calc(${j} * 100px + 300px)`}}>{title}</S.AdTitle>
-                  ))}
-                </S.AdTitleWrapper>
-              </S.AdBannerWrapper>
-            )}
-        })}
-      </S.AdWrapper>
-      </>
     </>
   );
 }

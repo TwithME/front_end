@@ -181,12 +181,12 @@ export default function TriplogDetail() {
           </S.MidTopLeftWrapper>
 
           <S.MidTopRightWrapper>
-            <S.WithTripylerWrapper>
+            <S.WithBoardWrapper>
               <S.WithTripTitle>
-                동행 TwithMe ({data.tripylerWithList?.length}명)
+                동행 TwithMe ({data.boardWithList?.length}명)
               </S.WithTripTitle>
               <S.WithTripProfileList>
-                {data.tripylerWithList
+                {data.boardWithList
                   ?.filter((el, idx) => idx < 4)
                   .map((el, idx) => (
                     <S.WithTripProfileWrapper
@@ -199,9 +199,9 @@ export default function TriplogDetail() {
                       />
                     </S.WithTripProfileWrapper>
                   ))}
-                {data.tripylerWithList?.length > 4 && (
+                {data.boardWithList?.length > 4 && (
                   <S.WithTripMoreBox onClick={onClickWithTrip}>
-                    +{data.tripylerWithList?.length - 4}
+                    +{data.boardWithList?.length - 4}
                   </S.WithTripMoreBox>
                 )}
               </S.WithTripProfileList>
@@ -209,7 +209,7 @@ export default function TriplogDetail() {
                 <S.WithTripList>
                   <S.WithTripListTitle>TwithMe 리스트</S.WithTripListTitle>
                   <S.WithTripListWrapper>
-                    {data.tripylerWithList?.map((el) => (
+                    {data.boardWithList?.map((el) => (
                       <S.WithTripListItem>
                         <S.WithTripListProfile>
                           <S.UserImg
@@ -222,8 +222,8 @@ export default function TriplogDetail() {
                   </S.WithTripListWrapper>
                 </S.WithTripList>
               )}
-            </S.WithTripylerWrapper>
-            <S.TripylerInfoWrapper>
+            </S.WithBoardWrapper>
+            <S.BoardInfoWrapper>
               <S.ContentsInfoWrapper>
                 <S.ContentsInfoIcon src="/icon/location.png" />
                 <S.ContentsInfoTxt>
@@ -240,7 +240,7 @@ export default function TriplogDetail() {
                 <S.ContentsInfoIcon src="/icon/user.png" />
                 <S.ContentsInfoTxt>{data?.totalPeopleNum}인</S.ContentsInfoTxt>
               </S.ContentsInfoWrapper>
-            </S.TripylerInfoWrapper>
+            </S.BoardInfoWrapper>
           </S.MidTopRightWrapper>
         </S.ContentsMidTopWrapper>
         <S.ContentsMidBtmWrapper>

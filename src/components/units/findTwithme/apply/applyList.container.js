@@ -1,17 +1,17 @@
-import FindTripylerBanner from "@/components/commons/Layout/findTwithmeBanner";
+import FindBoardBanner from "@/components/commons/Layout/findTwithmeBanner";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import * as S from "./applyList.style";
 
-export default function FindTripylerApplyList() {
+export default function FindBoardApplyList() {
   const router = useRouter();
   const apiPath = "http://semtle.catholic.ac.kr:8081";
   const [applyList, setApplyList] = useState([]);
 
   const fetchList = async () => {
     await axios
-      .get(apiPath + "/tripyler/apply")
+      .get(apiPath + "/board/apply")
       .then((res) => {
         setApplyList([...res.data.data]);
       })
@@ -26,7 +26,7 @@ export default function FindTripylerApplyList() {
 
   return (
     <>
-      <FindTripylerBanner
+      <FindBoardBanner
         title="TwithMe 신청내역"
         subTitle="TwithMe 에서 나에게 동행신청을 보낸 TwithMe들을 만나보세요."
       />

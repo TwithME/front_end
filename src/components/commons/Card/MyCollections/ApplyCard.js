@@ -1,13 +1,12 @@
 import styled from "@emotion/styled";
 import { useRouter } from "next/router";
-import { useState } from "react";
 
 export default function MyCollectionsFindCard (props) {
   console.log(props.data);
   const router = useRouter();
 
     return(
-        <ReviewCard style={{'cursor': 'pointer'}} onClick={(e) => router.push(`/findTwithme/${props.data.tripylerId}`)}>
+        <ReviewCard style={{'cursor': 'pointer'}} onClick={(e) => router.push(`/findTwithme/${props.data.boardId}`)}>
           <ReviewImgWrapper>
             <ReviewImg src={props.data.imageUrl === null ? "/img/defaultImg.png" : props.data.imageUrl}></ReviewImg>
             </ReviewImgWrapper>

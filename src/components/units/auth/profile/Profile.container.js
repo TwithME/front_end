@@ -68,7 +68,7 @@ export default function Profile() {
   const [myCollectionApplyData, setMyCollectionApplyData] = useState([]);
 
   // triplog data
-  const [myTripylersData, setMyTripylersData] = useState([]);
+  const [myBoardsData, setMyBoardsData] = useState([]);
   const [myReviewsData, setMyReviewsData] = useState([]);
 
   // My Profile api
@@ -304,14 +304,14 @@ export default function Profile() {
       .catch((err) => console.log(err));
 
     await axios
-      .get(apiPath + "/my-collections/tripyler-like-list")
+      .get(apiPath + "/my-collections/board-like-list")
       .then((res) => {
         setMyCollectionLikeData(res.data.data);
       })
       .catch((err) => console.log(err));
 
     await axios
-      .get(apiPath + "/my-collections/tripyler-apply-list")
+      .get(apiPath + "/my-collections/board-apply-list")
       .then((res) => {
         setMyCollectionApplyData(res.data.data);
       })
@@ -331,9 +331,9 @@ export default function Profile() {
       .catch((err) => console.log(err));
 
     await axios
-      .get(apiPath + `/my-collections/my-tripylers?year=${e}`)
+      .get(apiPath + `/my-collections/my-boards?year=${e}`)
       .then((res) => {
-        setMyTripylersData(res.data.data);
+        setMyBoardsData(res.data.data);
       })
       .catch((err) => console.log(err));
   };
@@ -441,7 +441,7 @@ export default function Profile() {
             )}
             {selectedCategory === "Triplog" && (
               <Triplog
-                TripylersData={myTripylersData}
+                BoardsData={myBoardsData}
                 reviewData={myReviewsData}
                 onOpenTriplog={onOpenTriplog}
               />

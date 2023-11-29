@@ -1,5 +1,5 @@
 
-import Oauth from '@/components/commons/Oauth/Oauth';
+import Oauth from '@/components/commons/Layout/SocialLogin/SocialLogin';
 
 export default function login() {
   return (

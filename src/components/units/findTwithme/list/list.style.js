@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import {css} from "styled-components";
+import { css } from "styled-components";
 // import FindCard from "../../commons/FindCard/FindCard;"
 
 export const Banner = styled.div`
@@ -307,7 +307,7 @@ export const Review = styled.div`
   width: 1440px;
 `;
 
-export const FindTripylerContent = styled.div`
+export const FindTwithmeContent = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -315,7 +315,7 @@ export const FindTripylerContent = styled.div`
   gap: 70px;
 `;
 
-export const FindTripylerNoContent = styled(FindTripylerContent)`
+export const FindTwithmeNoContent = styled(FindTwithmeContent)`
   height: 200px;
   margin: auto;
   justify-content: center;
@@ -335,7 +335,7 @@ export const ContentWrapper = styled.div`
   margin-bottom: 100px;
 `;
 
-export const FindTripylerTitle = styled.div`
+export const FindBoardTitle = styled.div`
   min-width: 1400px;
   max-width: 1960px;
   height: 64px;
@@ -355,7 +355,7 @@ export const FindTripylerTitle = styled.div`
   border-bottom: 2px solid #9AB3F5;
 `;
 
-export const FindTripylerWriteBtn = styled.div`
+export const FindBoardWriteBtn = styled.div`
   background-color: #ffffff;
   color: #66D2E8;
   margin-right: 15px;
@@ -365,7 +365,7 @@ export const FindTripylerWriteBtn = styled.div`
   cursor: pointer;
 `;
 
-export const FindTripylerTitleWrapper = styled.div`
+export const FindBoardTitleWrapper = styled.div`
   display: flex;
   flex-direction: row;
 
@@ -374,7 +374,7 @@ export const FindTripylerTitleWrapper = styled.div`
   justify-content: center;
 `
 
-export const FindTripylerFilterOne = styled.select`
+export const FindBoardFilterOne = styled.select`
   border: 2px solid #00B4D8;
   border-radius: 20px;
   width: 111px;

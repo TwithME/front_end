@@ -10,7 +10,7 @@ import Calendar from "@/components/commons/Tools/Calendar";
 import FindCard from '../../../commons/Card/Main/FindCard/FindCard';
 
 
-export default function FindTripylerList(){
+export default function FindTwithmeList(){
     const isJwtValid = useRecoilValue(IsJwtValidSelector); // JWT 토큰 유효성 가져오기
     const setJwtToken = useSetRecoilState(JwtTokenState);
     const jwtInfo = useRecoilValue(JwtTokenState);
@@ -407,22 +407,11 @@ export default function FindTripylerList(){
       </S.Banner>
 
       <S.ContentWrapper>
-        <S.FindTripylerTitleWrapper>
-            <S.FindTripylerTitle>
+        <S.FindBoardTitleWrapper>
+            <S.FindBoardTitle>
               <div>TwithMe 찾기 게시물</div>
-            </S.FindTripylerTitle>
-              {/* <S.FindTripylerWriteBtn onClick={() => {
-                if(!isLoggedIn){
-                  checkLogin();
-                } else{
-                  if(!checkToken()){
-                    router.push(`/findTripyler/write`); 
-                    setFindCardFilter({});
-                  }
-                }
-              }}>글쓰기 〉</S.FindTripylerWriteBtn>
-             */}
-        </S.FindTripylerTitleWrapper>
+            </S.FindBoardTitle>
+        </S.FindBoardTitleWrapper>
         <S.FilterContainer>
           <S.FilterCategoryBox>
             <S.FilterCategory onClick={(e) => {setOption("1"); onClcickFilterFind();}} selected={option === "1"}>최신 순</S.FilterCategory>
@@ -443,11 +432,11 @@ export default function FindTripylerList(){
         </S.FilterContainer>
         <S.Review>
           {newCardList.length === 0 ? (
-            <S.FindTripylerNoContent>
+            <S.FindTwithmeNoContent>
               <S.NoContent>조건에 맞는 게시 글이 존재하지 않습니다</S.NoContent>
-            </S.FindTripylerNoContent>
+            </S.FindTwithmeNoContent>
           ) : (
-          <S.FindTripylerContent>
+          <S.FindTwithmeContent>
             {newCardList.map((card, idx) => { 
               if(parseInt(idx / 6) === currentPage - 1){
               return(
@@ -456,12 +445,12 @@ export default function FindTripylerList(){
                   checkLogin();
                 } else{
                   if(!checkToken()) {
-                    router.push(`/findTwithme/${card.tripylerId}`);
+                    router.push(`/findTwithme/${card.boardId}`);
                   }
                 }
-              }} id={card.tripylerId} info={card}/>
+              }} id={card.boardId} info={card}/>
             )}})}
-          </S.FindTripylerContent>
+          </S.FindTwithmeContent>
           )}
 
           {/* {(newCardList.length && pageNum.length) && ( */}
@@ -476,18 +465,18 @@ export default function FindTripylerList(){
           )}
         </S.Review>
 
-        <S.FindTripylerTitleWrapper>
-            <S.FindTripylerTitle>
+        <S.FindBoardTitleWrapper>
+            <S.FindBoardTitle>
               <div>실시간 인기 TwithMe 찾기 게시물</div>
-            </S.FindTripylerTitle>
-        </S.FindTripylerTitleWrapper>
+            </S.FindBoardTitle>
+        </S.FindBoardTitleWrapper>
         <S.Review>
           {newCardList.length === 0 ? (
-            <S.FindTripylerNoContent>
+            <S.FindTwithmeNoContent>
               <S.NoContent>조건에 맞는 게시 글이 존재하지 않습니다</S.NoContent>
-            </S.FindTripylerNoContent>
+            </S.FindTwithmeNoContent>
           ) : (
-          <S.FindTripylerContent>
+          <S.FindTwithmeNoContent>
             {newCardList.map((card, idx) => { 
               if(idx >= 0 && idx < 3){
               return(
@@ -496,12 +485,12 @@ export default function FindTripylerList(){
                   checkLogin();
                 } else{
                   if(!checkToken()) {
-                    router.push(`/findTwithme/${card.tripylerId}`);
+                    router.push(`/findTwithme/${card.boardId}`);
                   }
                 }
-              }} id={card.tripylerId} info={card}/>
+              }} id={card.boardId} info={card}/>
             )}})}
-          </S.FindTripylerContent>
+          </S.FindTwithmeNoContent>
           )}
         </S.Review>
       </S.ContentWrapper>
