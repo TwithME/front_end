@@ -62,7 +62,7 @@ export default function FindBoardWrite(props) {
 
   const fetchData = async () => {
     await axios
-      .get(`${apiPath}/twithme/${boardId}`)
+      .get(`${apiPath}/board/${boardId}`)
       .then((res) => {
         const data = res.data.data;
         setData({ ...data });
@@ -110,7 +110,7 @@ export default function FindBoardWrite(props) {
     const value = event.target.search.value;
 
     await axios
-      .get(`${apiPath}/twithme/search?regionName=${value}`)
+      .get(`${apiPath}/board/search?regionName=${value}`)
       .then((res) => {
         setPlace({ ...res.data.data });
         setErrPlace("");
@@ -275,13 +275,13 @@ export default function FindBoardWrite(props) {
       };
       const formData = new FormData();
       formData.append(
-        "twithmeCreateDto",
+        "boardCreateDto",
         new Blob([JSON.stringify(requestData)], { type: "application/json" })
       );
       formData.append("images", selectedImage);
 
       await axios
-        .post(apiPath + "/twithme", formData, {
+        .post(apiPath + "/borad", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             accept: "application/json",
@@ -326,13 +326,13 @@ export default function FindBoardWrite(props) {
       };
       const formData = new FormData();
       formData.append(
-        "twithmeCreateDto",
+        "boardCreateDto",
         new Blob([JSON.stringify(requestData)], { type: "application/json" })
       );
       formData.append("images", selectedImage);
 
       await axios
-        .patch(apiPath + `/twithme/${boardId}`, formData, {
+        .patch(apiPath + `/board/${boardId}`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             accept: "application/json",

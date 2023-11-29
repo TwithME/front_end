@@ -101,7 +101,7 @@ export default function FindBoardDetail() {
   // 동행 신청자 리스트
   const fetchList = async () => {
     await axios
-      .get(apiPath + "/twithme/apply")
+      .get(apiPath + "/board/apply")
       .then((res) => {
         const { [boardId]: selectedValue } = res.data.data;
         setApplyList([...selectedValue]);
@@ -119,7 +119,7 @@ export default function FindBoardDetail() {
       window.localStorage.getItem("login-token");
 
     await axios
-      .get(`${apiPath}/twithme/${boardId}`)
+      .get(`${apiPath}/board/${boardId}`)
       .then((res) => {
         const data = res.data.data;
         setData({ ...data });
@@ -133,7 +133,7 @@ export default function FindBoardDetail() {
   // 댓글 기능
   const fetchComment = async () => {
     axios
-      .get(`${apiPath}/twithme/${boardId}/comment/list`)
+      .get(`${apiPath}/board/${boardId}/comment/list`)
       .then((res) => {
         setCommentData([...res.data.data]);
       })
@@ -148,7 +148,7 @@ export default function FindBoardDetail() {
     event.preventDefault();
 
     await axios
-      .post(`${apiPath}/twithme/comment`, {
+      .post(`${apiPath}/board/comment`, {
         content: event.target.comment.value,
         boardId,
       })
@@ -162,7 +162,7 @@ export default function FindBoardDetail() {
   // 좋아요 기능
   const onClickLike = async () => {
     await axios
-      .post(apiPath + "/twithme/like", {
+      .post(apiPath + "/board/like", {
         boardId,
       })
       .then((res) => {

@@ -81,7 +81,7 @@ export default function Main() {
         };
   
         try {
-          const res = await axios.post(`${apipath}/twithme/list?isRecruiting=1&option=1`, requestData);
+          const res = await axios.post(`${apipath}/board/list?isRecruiting=1&option=1`, requestData);
           setResponse(res.data.data);
         } catch (error) {
           console.log(error);
@@ -109,7 +109,7 @@ export default function Main() {
     }
 
     await axios
-      .post(`${apipath}/twithme/list?isRecruiting=1&option=1`, requestData)
+      .post(`${apipath}/board/list?isRecruiting=1&option=1`, requestData)
       .then((res) => {
         const arr = res.data.data;
         setFindCardList(res.data.data);        

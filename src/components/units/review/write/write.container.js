@@ -60,7 +60,7 @@ export default function TriplogWrite(props) {
 
   const fetchList = async () => {
     await axios
-      .get(`${apiPath}/my-collections/my-all-twithmes`)
+      .get(`${apiPath}/my-collections/my-all-borads`)
       .then((res) => {
         setTripList([...res.data.data]);
       })
