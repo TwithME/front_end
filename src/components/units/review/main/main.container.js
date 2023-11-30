@@ -76,9 +76,9 @@ export default function ReviewMain() {
 
     const [option, setOption] = useState("");
     const onClcickFilterFind = async () => {
-      if(isLoggedIn){
-        checkToken();
-      }
+      // if(isLoggedIn){
+      //   checkToken();
+      // }
       setPageNum([]);
       const requestData = {
         "continentId": parseInt(selectedDestination.continent.id),
@@ -473,9 +473,9 @@ export default function ReviewMain() {
               if(!isLoggedIn){
                 checkLogin();
               } else{
-                if(!checkToken()) {
+                // if(!checkToken()) {
                   router.push("/review/write");
-                }
+                // }
               }
             }}>
               후기 작성 〉
@@ -512,9 +512,9 @@ export default function ReviewMain() {
                   if(!isLoggedIn){
                     checkLogin();
                   } else{
-                    if(!checkToken()){
+                    // if(!checkToken()){
                       router.push(`/review/${card.boardId}`);
-                    }
+                    // }
                   }
                 }}
               />

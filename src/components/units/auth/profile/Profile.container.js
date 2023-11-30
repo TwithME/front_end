@@ -79,6 +79,7 @@ export default function Profile() {
     await axios
       .get(apiPath + "/profile/my-profile")
       .then((response) => {
+        console.log(response.data);
         const responseData = { ...response.data.data };
         setMyProfileData(responseData);
       })
@@ -87,22 +88,23 @@ export default function Profile() {
 
   // 다른 유저 프로필 정보 가져오기
   useEffect(() => {
-    const fetchProfile = async () => {
-      if (router.query.user === "false") {
-        setSelectedCategory("NotMyProfile");
-      }
-      axios.defaults.headers.common["x-auth-token"] =
-        window.localStorage.getItem("login-token");
+    if(!isNaN(userId)){
+      const fetchProfile = async () => {
+        if (router.query.user === "false") {
+          setSelectedCategory("NotMyProfile");
+        }
+        axios.defaults.headers.common["x-auth-token"] =
+          window.localStorage.getItem("login-token");
 
-      await axios
-        .get(apiPath + `/profile/${userId}`)
-        .then((res) => {
-          setNotMyProfileData(res.data.data);
-        })
-        .catch((err) => console.log(err));
-    };
-
-    fetchProfile();
+        await axios
+          .get(apiPath + `/profile/${userId}`)
+          .then((res) => {
+            setNotMyProfileData(res.data.data);
+          })
+          .catch((err) => console.log(err));
+      };
+      fetchProfile();
+    }
   }, [userId]);
 
   // My Profile 수정 api

@@ -256,6 +256,7 @@ export default function FindBoardWrite(props) {
       title &&
       content
     ) {
+      console.log("!");
       const requestData = {
         title,
         content,
@@ -273,13 +274,15 @@ export default function FindBoardWrite(props) {
         estimatedPrice,
         boardWithList: [...shownWithBoardList.map((el) => el.nickname)],
       };
+      console.log(requestData);
       const formData = new FormData();
       formData.append(
-        "boardCreateDto",
+        "BoardCreateDto",
         new Blob([JSON.stringify(requestData)], { type: "application/json" })
       );
       formData.append("images", selectedImage);
 
+      console.log(formData);
       await axios
         .post(apiPath + "/board", formData, {
           headers: {

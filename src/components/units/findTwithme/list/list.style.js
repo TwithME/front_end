@@ -353,6 +353,14 @@ export const FindBoardTitle = styled.div`
   align-items: center;
   justify-content: space-between;
   border-bottom: 2px solid #FF5251;
+
+  & > span{
+    font-size: 20px;
+    border: 1.5px solid #FF5251;
+    border-radius: 30px;
+    padding: 0.5rem 2rem;
+    cursor: pointer;
+  }
 `;
 
 export const FindBoardWriteBtn = styled.div`
