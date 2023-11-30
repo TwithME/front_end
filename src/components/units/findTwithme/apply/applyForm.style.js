@@ -6,7 +6,7 @@ height: 64px;
 padding: 10px 30px;
 border-radius: 10px;
 border: 1px solid #FFF;
-background: rgba(0, 180, 216, 0.60);
+background: rgba(255, 82, 81, 0.6);
 margin: auto;
 margin-bottom: 70px;
 
@@ -35,7 +35,7 @@ justify-content: flex-start;
 `
 
 export const FormTitle = styled.div`
-color: #9AB3F5;
+color: #FF5251;
 font-size: 45px;
 font-weight: 600;
 margin-bottom: 23px;
@@ -80,7 +80,7 @@ margin-bottom: 25px;
 `
 
 export const SubTitle = styled.div`
-color: #9AB3F5;
+color: #FF5251;
 font-size: 32px;
 font-weight: 600;
 margin-bottom: 30px;

@@ -5,7 +5,7 @@ export const Title = styled.div`
   height: 65px;
   margin: auto;
   margin-bottom: 50px;
-  background-color: rgba(0, 180, 216, 0.6);
+  background-color: rgba(255, 82, 81, 0.6);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -40,7 +40,7 @@ export const ContentsImg = styled.img`
 
 export const ContentsTitle = styled.div`
   width: 1200px;
-  color: #9ab3f5;
+  color: #FF5251;
   font-size: 45px;
   font-weight: 600;
   margin-bottom: 30px;
@@ -107,7 +107,7 @@ export const UserStyle = styled.div`
 
 export const ContentsSubTitle = styled.div`
   width: 1200px;
-  color: #9ab3f5;
+  color: #FF5251;
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 35px;

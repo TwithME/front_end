@@ -200,7 +200,7 @@ export const DateLine = styled.div`
 export const FilterFindBtn = styled.button`
   width: 160px;
   height: 60px;
-  background: #b388eb;
+  background: #FF5251;
   border-radius: 50px;
   margin: auto;
 

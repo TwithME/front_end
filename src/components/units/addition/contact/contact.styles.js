@@ -19,7 +19,7 @@ export const TitleWrapper = styled.div`
 
 export const MainTitle = styled.div`
     font-size: 35px;
-    color: #9AB3F5;
+    color: #FF5251;
     font-weight: 700;
 
 `;

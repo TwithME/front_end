@@ -115,7 +115,7 @@ const PreviewWrapper = styled.div`
 const PreviewTitle = styled.div`
   font-size: 25px;
   font-weight: bold;
-  color: #9AB3F5;
+  color: #FF5251;
   text-align: center;
 `;
 

@@ -210,7 +210,7 @@ export const FilterFindBtn = styled.button`
   width: 200px;
   height: 170px;
   border-radius: 30px;
-  background: rgba(154, 179, 245, 0.8);
+  background: rgba(255, 82, 81, 0.8);
   border-radius: 50px;
   margin: 0 auto;
   margin-top: 33px;

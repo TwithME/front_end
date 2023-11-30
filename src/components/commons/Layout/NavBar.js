@@ -278,7 +278,7 @@ const AfterLoginItem = styled.li`
   align-items: center;
   white-space: nowrap;
   background-color: ${(props) =>
-    props.id == props.infoMsgNum ? "rgba(179, 136, 235, 30%)" : "transparent"};
+    props.id == props.infoMsgNum ? "rgba(255, 82, 81, 30%)" : "transparent"};
 
   border-radius: 50%;
 `;
@@ -290,9 +290,9 @@ const Container = styled.div`
 const SignInBtn = styled.button`
   background-color: transparent;
   border-radius: 50px;
-  border: 2px solid #c8b6ff;
+  border: 2px solid rgba(255, 82, 81, 0.3);
 
-  color: #c8b6ff;
+  color: rgba(255, 82, 81, 0.3);
   letter-spacing: -2px;
 
   font-size: 18px;
@@ -302,10 +302,10 @@ const SignInBtn = styled.button`
 `;
 
 const SignUpBtn = styled.button`
-  background-color: #c8b6ff;
+  background-color: rgba(255, 82, 81, 0.5);
   color: white;
   border-radius: 50px;
-  border: 2px solid #c8b6ff;
+  border: 2px solid rgba(255, 82, 81, 0.5);
   color: white;
   letter-spacing: -2px;
 
@@ -323,7 +323,7 @@ const NicknameWrapper = styled.img`
 const InfoMsg = styled.div`
   width: 320px;
   height: 120px;
-  border: 1px solid #b388eb;
+  border: 1px solid #FF5251;
   border-radius: 15px;
   background-color: #ffffff;
   position: absolute;
@@ -347,7 +347,7 @@ const InfoMsgTxt = styled.div`
 const InfoMsgBtn = styled.button`
   padding: 5px 10px;
   font-size: 16px;
-  background-color: #b388eb;
+  background-color: #FF5251;
   color: #ffffff;
   text-align: center;
   border-radius: 10px;

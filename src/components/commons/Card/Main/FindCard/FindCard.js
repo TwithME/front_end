@@ -201,7 +201,7 @@ const ReviewInfo = styled.div`
 
   width: 350px;
   height: 35px;
-  background-color: #9AB3F5;
+  background-color: #FF5251;
   border-radius: 5px;
 `;
 
@@ -421,7 +421,7 @@ const ReviewReactMsgTxt = styled(ReviewReactTxt)`
 const ReviewDetailBtn = styled.button`
   width: 62px;
   height: 24px;
-  background: #9ab3f5;
+  background: #FF5251;
   border-radius: 5px;
   display: flex;
   justify-content: center;

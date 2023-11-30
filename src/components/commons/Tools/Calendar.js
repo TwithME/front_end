@@ -121,7 +121,7 @@ const StyledCalendar = styled(Calendar)`
     background-color: #f8f8fa;
   }
   .react-calendar__tile--range {
-    background: rgba(200, 182, 255, 0.2);
+    background: rgba(255, 82, 81, 0.2);
     color: #a587ff;
     border-radius: 0;
   }

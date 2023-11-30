@@ -58,7 +58,7 @@ export const ContentsTopWrapper = styled.div`
 `;
 
 export const ContentsTitle = styled.div`
-  color: #9ab3f5;
+  color: #FF5251;
   font-size: 45px;
   font-weight: 600;
   margin-right: 30px;
@@ -286,7 +286,7 @@ export const ContentsMidBtmWrapper = styled.div`
 `;
 
 export const MidBtmTitle = styled.div`
-  color: #9ab3f5;
+  color: #FF5251;
   font-size: 28px;
   font-weight: 600;
   margin-bottom: 17px;
