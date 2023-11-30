@@ -346,13 +346,13 @@ export const FindBoardTitle = styled.div`
   font-style: normal;
   font-weight: bold;
   font-size: 30px;
-  color: #9AB3F5;
+  color: #FF5251;
   margin: 30px 0;
   padding: 10px 0 10px 0;
   background-color: #fff;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid #9AB3F5;
+  border-bottom: 2px solid #FF5251;
 `;
 
 export const FindBoardWriteBtn = styled.div`
@@ -446,15 +446,15 @@ export const FilterCategory = styled.div`
   line-height: 39px;
   text-align: center;
   border-radius: 20px;
-  color: #9AB3F5;
-  border: 2px solid #9AB3F5;
+  color: #FF5251;
+  border: 2px solid #FF5251;
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
 
   ${(props) =>
     props.selected && css`
-      background-color: #9AB3F5;
+      background-color: #FF5251;
       color: #fff;
     `
   };
@@ -468,9 +468,9 @@ export const FilterRecruit = styled.div`
   height: 39px;
   line-height: 39px;
   text-align: center;
-  color: #9AB3F5;
+  color: #FF5251;
   border-radius: 5px;
-  border: 2px solid #9AB3F5;
+  border: 2px solid #FF5251;
   background-color: #fff;
   font-size: 15px;
   font-weight: 700;
@@ -484,7 +484,7 @@ export const FilterRecruitModalBox = styled.div`
   position: absolute;
 
   border-radius: 5px;
-  border: 2px solid #9AB3F5;
+  border: 2px solid #FF5251;
   width: 100px;
 `;
 
@@ -494,7 +494,7 @@ export const FilterRecruitModal = styled.div`
   height: 39px;
   line-height: 39px;
   text-align: center;
-  color: #9AB3F5;
+  color: #FF5251;
   background-color: #fff;
   font-size: 15px;
   font-weight: 700;
@@ -502,7 +502,7 @@ export const FilterRecruitModal = styled.div`
 `;
 
 export const FilterRecruitLine = styled.div`
-  background-color: #9AB3F5;
+  background-color: #FF5251;
   height: 2px;
   // width: 90%;
 `;

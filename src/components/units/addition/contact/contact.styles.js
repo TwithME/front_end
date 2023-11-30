@@ -19,7 +19,7 @@ export const TitleWrapper = styled.div`
 
 export const MainTitle = styled.div`
     font-size: 35px;
-    color: #9AB3F5;
+    color: #FF5251;
     font-weight: 700;
 
 `;
@@ -63,7 +63,7 @@ export const TitleLittleBox = styled.div`
     align-items: center;
     line-height: 75px;
     color: #ffffff;
-    background-color: #C8B6FF;
+    background-color: rgba(255, 82, 81, 0.8);
     font-size: 25px;
     border-radius: 20px;
 `;
@@ -265,7 +265,7 @@ export const Btn = styled.div`
     width: 1350px;
     height: 75px;
     border-radius: 20px;
-    background-color: #C8B6FF;
+    background-color: rgba(255, 82, 81, 0.8);
     color: #fff;
     font-size: 25px;
     font-weight: 700;

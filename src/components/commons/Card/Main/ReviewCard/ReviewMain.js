@@ -185,7 +185,7 @@ const ReviewDetailWrapper = styled.div`
 
 const ReviewDetailTitle = styled.div`
   font-size: 25px;
-  color: #9ab3f5;
+  color: #FF5251;
   font-weight: bold;
   margin: 20px 0 0 0;
 `;

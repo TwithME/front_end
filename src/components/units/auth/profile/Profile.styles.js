@@ -70,7 +70,7 @@ export const ProfileImage = styled.div`
 
 export const profileFileBtn = styled.label`
 background-color: #ffffff;
-border: 1px solid #C8B6FF;
+border: 1px solid #FF5251;
 border-radius: 15px;
 color: #000000;
 font-weight: bold;
@@ -86,7 +86,7 @@ cursor: pointer;
 
 export const profileBtn = styled.button`
 background-color: #ffffff;
-border: 1px solid #C8B6FF;
+border: 1px solid #FF5251;
 color: #000000;
 font-weight: bold;
 border-radius: 15px;
@@ -133,7 +133,7 @@ export const Category = styled.button`
   line-height: 64px;
 
   background-color: ${(props) =>
-    props.selectedCategory == props.id ? "#C8B6FF" : "#ffffff"};
+    props.selectedCategory == props.id ? "#FF5251" : "#ffffff"};
   color: ${(props) =>
     props.selectedCategory == props.id ? "#ffffff" : "#666666"};
 `;
@@ -175,7 +175,7 @@ export const Td = styled.td`
 `;
 
 export const StyleTd = styled(Td)`
-    background: #90E0EF;
+    background: #FF5251;
     width: 77px;
     height: 30px;
     border-radius: 20px;
@@ -201,7 +201,7 @@ export const BtnWrapper = styled.div`
 
 export const Btn = styled.button`
     border-radius: 50px;
-    background-color: #C8B6FF;
+    background-color: #FF5251;
     padding: 15px 50px;
     border: none;
     color: #ffffff;
@@ -237,7 +237,7 @@ export const ModalTitle = styled.div`
   width: 100%;
   height: 50px;
   border-radius: 10px 10px 0px 0px;
-  background-color: #c8b6ff;
+  background-color: #FF5251;
   text-align: center;
   margin-bottom: 26px;
 
@@ -267,12 +267,12 @@ export const ModalMbtiContent = styled.div`
   font-size: 20px;
   padding: 10px 20px;
   margin: 10px 15px;
-  background-color: #90e0ef;
+  background-color: #FF5251;
   color: #ffffff;
   border-radius: 15px;
 
   &:hover {
-    background-color: #19d0f2;
+    background-color: #F6201F;
   }
 `;
 
@@ -300,8 +300,8 @@ export const ModalCancelBtn = styled.button`
   width: 100px;
   height: 40px;
   background-color: #ffffff;
-  color: #c8b6ff;
-  border: 1px solid #c8b6ff;
+  color: #FF5251;
+  border: 1px solid #FF5251;
   border-radius: 10px;
   margin: 0 10px;
 
@@ -311,7 +311,7 @@ export const ModalCancelBtn = styled.button`
 `;
 
 export const ModalSubmitBtn = styled(ModalCancelBtn)`
-  background-color: #c8b6ff;
+  background-color: #FF5251;
   color: #ffffff;
   border: none;
 `;
