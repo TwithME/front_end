@@ -14,6 +14,8 @@ export default function MyProfile(props) {
     return phoneNum?.replace(regex, "$1-$2-$3");
   };
 
+  console.log(props.data);
+
   const [mbtiList, setMbtiList] = useState([]);
   const [mbti, setMbti] = useState(props.data.mbti);
   const [mbtiIdx, setMbtiIdx] = useState(0);
@@ -311,7 +313,7 @@ export default function MyProfile(props) {
             
             <S.Tc>MBTI</S.Tc>
             <S.ModifyTd>
-              <S.mbti onClick={handleOpenModal}>{mbti}</S.mbti>
+              <S.mbti onClick={handleOpenModal}>{mbti && mbti}</S.mbti>
               {isModalOpen && (
             <S.ModalOverlay>
               <S.Modal>

@@ -410,6 +410,7 @@ export default function FindTwithmeList(){
         <S.FindBoardTitleWrapper>
             <S.FindBoardTitle>
               <div>TwithMe 찾기 게시물</div>
+              <span onClick={() => router.push("/findTwithme/write")}>글쓰기</span>
             </S.FindBoardTitle>
         </S.FindBoardTitleWrapper>
         <S.FilterContainer>
@@ -444,9 +445,9 @@ export default function FindTwithmeList(){
                 if(!isLoggedIn){
                   checkLogin();
                 } else{
-                  if(!checkToken()) {
+                  // if(!checkToken()) {
                     router.push(`/findTwithme/${card.boardId}`);
-                  }
+                  // }
                 }
               }} id={card.boardId} info={card}/>
             )}})}
@@ -465,7 +466,7 @@ export default function FindTwithmeList(){
           )}
         </S.Review>
 
-        <S.FindBoardTitleWrapper>
+        {/* <S.FindBoardTitleWrapper>
             <S.FindBoardTitle>
               <div>실시간 인기 TwithMe 찾기 게시물</div>
             </S.FindBoardTitle>
@@ -484,15 +485,15 @@ export default function FindTwithmeList(){
                 if(!isLoggedIn){
                   checkLogin();
                 } else{
-                  if(!checkToken()) {
+                  // if(!checkToken()) {
                     router.push(`/findTwithme/${card.boardId}`);
-                  }
+                  // }
                 }
               }} id={card.boardId} info={card}/>
             )}})}
           </S.FindTwithmeNoContent>
           )}
-        </S.Review>
+        </S.Review> */}
       </S.ContentWrapper>
     </>
   );
