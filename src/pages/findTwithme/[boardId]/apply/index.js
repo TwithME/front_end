@@ -1,5 +1,5 @@
-import FindTripylerApply from "@/components/units/findTripyler/apply/applyForm.container";
+import FindTwithmeApply from "../../../../components/units/findTwithme/apply/applyForm.container";
 
 export default function FindTripylerApplyPage() {
-  return <FindTripylerApply/>;
+  return <FindTwithmeApply/>;
 }
