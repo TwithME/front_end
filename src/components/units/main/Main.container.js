@@ -318,6 +318,7 @@ export default function Main() {
 
       <S.ContentWrapper>
         <S.ReviewTitleWrapper onClick={(e) => {
+          router.push("/review");
           if(isLoggedIn) {
             // if(!checkToken()) {
             //   router.push("/review")

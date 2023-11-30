@@ -15,36 +15,38 @@ export default function SocialLogin() {
   };
 
   return (
-    <>
+    <LoginWrapper>
       <Box>
-        <Text>TwithMe가 처음이신가요?</Text>
-        {/* <Button>
-          <LinkUp href="/auth/join">Sign Up</LinkUp>
-        </Button> */}
-      </Box>
-      <Box>
-        <span>⎼⎼⎼⎼⎼⎼⎼⎼⎼⎼⎼⎼⎼⎼⎼</span>
-        <Text> SNS 로그인 </Text>
-        <span>⎼⎼⎼⎼⎼⎼⎼⎼⎼⎼⎼⎼⎼⎼⎼</span>
+        <Text>TwithMe 회원가입 / 로그인</Text>
       </Box>
       <Box>
         <SocialImg onClick={onKaKaoHandler}>
           <StyledImage
-            src="/assets/kakao.png"
+            src="/img/kakao.png"
             alt="kakao"
-            width="45"
-            height="45"
+            width="600"
+            height="90"
           />
         </SocialImg>
       </Box>
-    </>
+    </LoginWrapper>
   );
 }
+
+const LoginWrapper = styled.div`
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
 const Box = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 1.7rem;
+  margin: 2rem 0;
+  white-space: nowrap;
+  font-size: 30px;
 `;
 
 const LinkUp = styled.a`
@@ -55,7 +57,8 @@ const LinkUp = styled.a`
 const Text = styled.span`
   color: #666666;
   margin: 0 20px;
-  font-size: 18px;
+  font-size: 25px;
+  font-weight: Bold;
   letter-spacing: -1px;
   line-height: 250%;
 `;
@@ -85,5 +88,4 @@ const SocialImg = styled.div`
 `;
 
 const StyledImage = styled(Image)`
-  border-radius: 50px;
 `;

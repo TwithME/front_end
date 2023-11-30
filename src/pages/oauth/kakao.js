@@ -37,11 +37,7 @@ const OAuthKaKao = () => {
                   .post(
                     "https://semtle.catholic.ac.kr:8081/user/login/kakao",
                     {
-                      snsId: response.data.id_token,
-                      snsToken: response.data.access_token,
-    
-                      // name: response.data.,
-                      // profileImage
+                      accessTokenFromSocial: res.data.id_token,
                     },
                     { "Content-Type": "application/json" }
                   )
