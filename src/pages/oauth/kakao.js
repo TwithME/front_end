@@ -47,9 +47,9 @@ const OAuthKaKao = () => {
                         "login-token",
                         response2.data.data.accessToken
                       );
-                      if (response2.data.data.needsAdditionalSignUp === true) {
-                        router.push("/auth/join/signup");
-                      }
+                      // if (response2.data.data.needsAdditionalSignUp === true) {
+                      //   router.push("/auth/join/signup");
+                      // }
                       router.push("/");
                       setIsLoggedIn(true);
                     }
