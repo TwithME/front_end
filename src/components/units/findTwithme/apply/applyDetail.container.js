@@ -27,7 +27,7 @@ export default function FindBoardApplyDetail() {
 
   const fetchData = async () => {
     await axios
-      .get(`${apiPath}/twithme/apply/${applyId}`)
+      .get(`${apiPath}/board/apply/${applyId}`)
       .then((res) => {
         setData({ ...res.data.data });
       })
@@ -36,7 +36,7 @@ export default function FindBoardApplyDetail() {
 
   const onClickRejectBtn = async () => {
     await axios
-      .get(`${apiPath}/twithme/apply/refuse/${applyId}`)
+      .get(`${apiPath}/board/apply/refuse/${applyId}`)
       .then((res) => {
         alert("거절");
         router.push(`/findTwithme/${boardId}`);
@@ -46,7 +46,7 @@ export default function FindBoardApplyDetail() {
 
   const onClickAcceptBtn = async () => {
     await axios
-      .get(`${apiPath}/twithme/apply/accept/${applyId}`)
+      .get(`${apiPath}/board/apply/accept/${applyId}`)
       .then((res) => {
         alert("수락");
         setIsAccept(true);

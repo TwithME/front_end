@@ -49,7 +49,7 @@ export default function FindBoardApply() {
         window.localStorage.getItem("login-token");
 
       await axios
-        .post(apiPath + "/twithme/apply", {
+        .post(apiPath + "/board/apply", {
           content,
           boardId,
         })
