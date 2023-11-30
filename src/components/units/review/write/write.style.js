@@ -4,7 +4,7 @@ import { StyleEditImg } from "../../auth/profile/MyProfile/NotMyProfile.styles";
 export const TitleBanner = styled.div`
   width: 100%;
   height: 500px;
-  background: rgba(0, 119, 182, 0.8);
+  background: rgba(255, 82, 81, 0.8);
   display: flex;
   justify-content: center;
   position: relative;

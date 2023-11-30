@@ -3,7 +3,7 @@ import { styled } from "styled-components";
 export const TitleBanner = styled.div`
   width: 100%;
   height: 500px;
-  background: rgba(0, 119, 182, 0.8);
+  background: rgba(255, 82, 81, 0.8);
   display: flex;
   justify-content: center;
   position: relative;
@@ -129,7 +129,7 @@ export const InputBar = styled.div`
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
-  background: rgba(102, 210, 232, 0.56);
+  background: rgba(255, 82, 81, 0.6);
   margin-bottom: 60px;
 `;
 
@@ -182,7 +182,7 @@ export const InputBtn = styled.button`
   width: 170px;
   height: 50px;
   border-radius: 5px;
-  background: rgba(0, 180, 216, 0.6);
+  background: rgba(255, 82, 81, 0.5);
   color: #fff;
   text-align: center;
   font-size: 18px;
@@ -224,7 +224,7 @@ export const UpDownBtn = styled.button`
   font-size: 30px;
 
   &:hover {
-    background-color: rgba(144, 224, 239, 0.4);
+    background-color: rgba(224, 114, 239, 0.4);
   }
 `;
 
@@ -313,7 +313,7 @@ export const fileReaderBtn = styled.label`
   width: 170px;
   height: 50px;
   border-radius: 5px;
-  background: rgba(0, 180, 216, 0.6);
+  background: rgba(235, 82, 81, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -416,7 +416,7 @@ export const ModalTitle = styled.div`
   width: 100%;
   height: 50px;
   border-radius: 10px 10px 0px 0px;
-  background-color: #c8b6ff;
+  background-color: #FF5251;
   text-align: center;
   margin-bottom: 26px;
 
@@ -495,8 +495,8 @@ export const ModalCancelBtn = styled.button`
   width: 100px;
   height: 40px;
   background-color: #ffffff;
-  color: #c8b6ff;
-  border: 1px solid #c8b6ff;
+  color: #FF5251;
+  border: 1px solid #FF5251;
   border-radius: 10px;
   margin: 0 10px;
 
@@ -506,7 +506,7 @@ export const ModalCancelBtn = styled.button`
 `;
 
 export const ModalSubmitBtn = styled(ModalCancelBtn)`
-  background-color: #c8b6ff;
+  background-color: #FF5251;
   color: #ffffff;
   border: none;
 `;
