@@ -416,7 +416,7 @@ export const ModalTitle = styled.div`
   width: 100%;
   height: 50px;
   border-radius: 10px 10px 0px 0px;
-  background-color: #c8b6ff;
+  background-color: #FF5251;
   text-align: center;
   margin-bottom: 26px;
 
@@ -495,8 +495,8 @@ export const ModalCancelBtn = styled.button`
   width: 100px;
   height: 40px;
   background-color: #ffffff;
-  color: #c8b6ff;
-  border: 1px solid #c8b6ff;
+  color: #FF5251;
+  border: 1px solid #FF5251;
   border-radius: 10px;
   margin: 0 10px;
 
@@ -506,7 +506,7 @@ export const ModalCancelBtn = styled.button`
 `;
 
 export const ModalSubmitBtn = styled(ModalCancelBtn)`
-  background-color: #c8b6ff;
+  background-color: #FF5251;
   color: #ffffff;
   border: none;
 `;

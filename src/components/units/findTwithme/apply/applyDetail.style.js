@@ -98,7 +98,7 @@ export const UserStyleWrapper = styled.div`
 
 export const UserStyle = styled.div`
   border-radius: 30px;
-  background-color: #90e0ef;
+  background-color: #FF5251;
   padding: 8px 18px;
   color: #fff;
   font-size: 20px;

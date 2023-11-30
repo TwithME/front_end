@@ -311,7 +311,7 @@ export const MidBtmStyleWrapper = styled.div`
 `;
 
 export const MidBtmStyle = styled(UserStyle)`
-  background-color: #90e0ef;
+  background-color: #FF5251;
 `;
 
 export const MidBtmBodyTxt = styled.div`
@@ -499,7 +499,7 @@ export const CmtInput = styled.input`
 export const CmtWriteBtn = styled.button`
   width: 150px;
   height: 60px;
-  background-color: #90e0ef;
+  background-color: #FF5251;
   border-radius: 10px;
 
   color: #fff;

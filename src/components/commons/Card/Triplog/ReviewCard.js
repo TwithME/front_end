@@ -39,7 +39,7 @@ const ReviewCard = styled.div`
   width: 400px;
   height: 295px;
 
-  background: rgba(160, 187, 255, 0.5);
+  background: rgba(255, 82, 81, 0.5);
   border-radius: 10px;
   box-shadow: 0px 3px 3px 3px rgba(153, 153, 153, 0.25);
   display: flex;

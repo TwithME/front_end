@@ -5,7 +5,7 @@ export const ContentsLoc = styled.div`
   height: 65px;
   margin: auto;
   margin-bottom: 50px;
-  background-color: rgba(0, 180, 216, 0.6);
+  background-color: rgba(255, 82, 81, 0.6);
   border-radius: 10px;
   display: flex;
   align-items: center;
