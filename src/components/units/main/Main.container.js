@@ -1,4 +1,4 @@
-import { FindCardFilter, FindCardList, JwtTokenState, LoginState, logout } from '@/States/LoginState';
+import { FindCardFilter, FindCardList, JwtTokenState, LoginState } from '@/States/LoginState';
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -46,15 +46,15 @@ export default function Main() {
   // const isRetina = useMediaQuery({ minResolution: '2dppx' })
 
   // 토큰이 만료되었을 경우
-  function checkToken () {
-    if(jwtInfo.expiryTime < new Date().getTime()){
-      alert("토큰이 만료되었습니다. 로그인을 다시 진행하여 주세요.");
-      router.push("/auth/signIn");
-      logout({setJwtToken});
-      setIsLoggedIn(false);
-      return true;
-    } else {return false;}
-  }
+  // function checkToken () {
+  //   if(jwtInfo.expiryTime < new Date().getTime()){
+  //     alert("토큰이 만료되었습니다. 로그인을 다시 진행하여 주세요.");
+  //     router.push("/auth/signIn");
+  //     logout({setJwtToken});
+  //     setIsLoggedIn(false);
+  //     return true;
+  //   } else {return false;}
+  // }
 
   const checkLogin = async () => {
     if(!isLoggedIn){
@@ -63,7 +63,7 @@ export default function Main() {
     }
   };
 
-  useEffect(() => {if(isLoggedIn) {checkToken()}}, []);
+  // useEffect(() => {if(isLoggedIn) {checkToken()}}, []);
 
 
   // 초기값 불러오기
@@ -95,9 +95,9 @@ export default function Main() {
   // TwithMe 찾기 필터링
   const router = useRouter();
   const onClcickFilterFind = async () => {
-    if(checkToken()) {
-      return;
-    } 
+    // if(checkToken()) {
+    //   return;
+    // } 
     const requestData = {
       "continentId": parseInt(selectedDestination.continent.id),
       "endDate": tripDate[1],
@@ -291,11 +291,12 @@ export default function Main() {
                 onClick={() => {
                   if(!isLoggedIn) {
                     checkLogin();
-                  } else {
-                    if(!checkToken()){
-                      router.push(`/findTwithme/${res.boardId}`);
-                    }
-                  }
+                  } 
+                  // else {
+                  //   if(!checkToken()){
+                  //     router.push(`/findTwithme/${res.boardId}`);
+                  //   }
+                  // }
                 }}
               />
             )}})}
@@ -317,10 +318,11 @@ export default function Main() {
 
       <S.ContentWrapper>
         <S.ReviewTitleWrapper onClick={(e) => {
+          router.push("/review");
           if(isLoggedIn) {
-            if(!checkToken()) {
-              router.push("/review")
-            } 
+            // if(!checkToken()) {
+            //   router.push("/review")
+            // } 
           }
         }}>
           <S.FindBoardTitle>TwithMe들의 여행 후기를 만나보세요</S.FindBoardTitle>
@@ -341,11 +343,12 @@ export default function Main() {
                 onClick={() => {
                   if(!isLoggedIn) {
                     checkLogin();
-                  } else {
-                    if(!checkToken()){
-                      router.push(`/review/${e.reviewId}`);
-                    }
-                  }
+                  } 
+                  // else {
+                  //   if(!checkToken()){
+                  //     router.push(`/review/${e.reviewId}`);
+                  //   }
+                  // }
                 }}
               />
           )}})}

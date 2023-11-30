@@ -1,4 +1,4 @@
-import { IsJwtValidSelector, JwtTokenState, LoginState, logout } from "@/States/LoginState";
+import { IsJwtValidSelector, JwtTokenState, LoginState } from "@/States/LoginState";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -33,17 +33,17 @@ export default function ReviewMain() {
   }
 
   // 토큰이 만료되었을 경우
-  function checkToken () {
-    if(jwtInfo.expiryTime < new Date().getTime()){
-      alert("토큰이 만료되었습니다. 로그인을 다시 진행하여 주세요.");
-      router.push("/auth/signIn");
-      logout({setJwtToken});
-      setIsLoggedIn(false);
-      return true;
-    } else{ return false; }
-  }
+  // function checkToken () {
+  //   if(jwtInfo.expiryTime < new Date().getTime()){
+  //     alert("토큰이 만료되었습니다. 로그인을 다시 진행하여 주세요.");
+  //     router.push("/auth/signIn");
+  //     logout({setJwtToken});
+  //     setIsLoggedIn(false);
+  //     return true;
+  //   } else{ return false; }
+  // }
 
-  useEffect(() => {if(isLoggedIn) {checkToken()}}, []);
+  // useEffect(() => {if(isLoggedIn) {checkToken()}}, []);
 
   // 여행 후기 필터링
   const [reviewList, setReviewList] = useState([]);
