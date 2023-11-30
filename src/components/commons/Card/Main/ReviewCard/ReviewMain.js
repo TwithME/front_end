@@ -150,7 +150,7 @@ const ReviewHashtagWrapper = styled.div`
 `;
 
 const ReviewHashtag = styled.div`
-  background-color: #00b4d8;
+  background-color: #FF5251;
   border-radius: 30px;
   width: px;
   height: 43px;

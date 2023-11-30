@@ -102,7 +102,7 @@ font-weight: 500;
 
 export const ApplyBtn = styled.button`
 border-radius: 50px;
-background: #00B4D8;
+background: #FF5251;
 padding: 20px 55px;
 
 color: #FFF;

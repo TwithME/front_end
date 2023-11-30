@@ -375,18 +375,18 @@ export const FindBoardTitleWrapper = styled.div`
 `
 
 export const FindBoardFilterOne = styled.select`
-  border: 2px solid #00B4D8;
+  border: 2px solid #FF5251;
   border-radius: 20px;
   width: 111px;
   height: 50px;
   margin-left: 20px;
   text-align: center;
   font-size: 15px;
-  color: #00B4D8;
+  color: #FF5251;
   cursor: pointer;
 
   &:focus{
-    border: 2px solid #00B4D8;
+    border: 2px solid #FF5251;
   }
   -o-appearance: none;
   -webkit-appearance: none;
@@ -395,7 +395,7 @@ export const FindBoardFilterOne = styled.select`
 `;
 
 export const FindTripylerOptionOne = styled.option`
-  border: 2px solid #00B4D8;
+  border: 2px solid #FF5251;
   border-radius: 20px;
   width: 111px;
   height: 50px;
@@ -405,18 +405,18 @@ export const FindTripylerOptionOne = styled.option`
 `;
 
 export const FindTripylerFilterTwo = styled.select`
-  border: 2px solid #00B4D8;
+  border: 2px solid #FF5251;
   border-radius: 20px;
   width: 111px;
   height: 50px;
   margin-left: 20px;
   text-align: center;
   font-size: 15px;
-  color: #00B4D8;
+  color: #FF5251;
   cursor: pointer;
 
   &:focus{
-    border: 2px solid #00B4D8;;
+    border: 2px solid #FF5251;;
   }
 
   -o-appearance: none;

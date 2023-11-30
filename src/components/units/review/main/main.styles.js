@@ -456,14 +456,14 @@ export const FindBoardTitle = styled.div`
   margin: 60px 0;
   padding: 10px 0 10px 40px;
   border-radius: 10px;
-  background-color: rgba(0, 180, 216, 0.6);
+  background-color: rgba(255, 82, 81, 0.6);
   align-items: center;
   justify-content: space-between;
 `;
 
 export const FindBoardWriteBtn = styled.div`
   background-color: #ffffff;
-  color: #66d2e8;
+  color: #FF5251;
   margin-right: 15px;
   border-radius: 50px;
   font-size: 18px;
@@ -481,18 +481,18 @@ export const FindBoardTitleWrapper = styled.div`
 `;
 
 export const FindBoardFilterTwo = styled.select`
-  border: 2px solid #00b4d8;
+  border: 2px solid #FF5251;
   border-radius: 20px;
   width: 111px;
   height: 50px;
   margin-left: 20px;
   text-align: center;
   font-size: 15px;
-  color: #00b4d8;
+  color: #FF5251;
   cursor: pointer;
 
   &:focus {
-    border: 2px solid #00b4d8;
+    border: 2px solid #FF5251;
   }
 `;
 

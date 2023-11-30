@@ -376,7 +376,7 @@ export const FindBoardTitleWrapper = styled.div`
   font-style: normal;
   font-weight: bold;
   font-size: 30px;
-  color: #9AB3F5;
+  color: #FF5251;
   margin: 0 auto;
   margin-top: 60px;
   margin-bottom: 60px;
@@ -434,14 +434,14 @@ export const AdTitle = styled.div`
 
 export const FindBoardTitle = styled(FindBoardTitleWrapper)`
   background-color: #fff;
-  border-top: 2px solid #9AB3F5;
-  border-bottom: 2px solid #9AB3F5;
+  border-top: 2px solid #FF5251;
+  border-bottom: 2px solid #FF5251;
 `;
 
 export const ReviewTitleWrapper = styled(FindBoardTitleWrapper)`
   background-color: #fff;
-  border-top: 2px solid #9AB3F5;
-  border-bottom: 2px solid #9AB3F5;
+  border-top: 2px solid #FF5251;
+  border-bottom: 2px solid #FF5251;
 `;
 
 export const ReviewTitle = styled.div``;

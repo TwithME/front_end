@@ -138,7 +138,7 @@ export const UserStyleWrapper = styled.div`
 
 export const UserStyle = styled.div`
   border-radius: 30px;
-  background: #00b4d8;
+  background: #FF5251;
   padding: 8px 18px;
   margin-right: 10px;
   color: #fff;
@@ -406,7 +406,7 @@ export const BtmTxt = styled.div`
 export const ApplyBtn = styled.button`
   padding: 15px 30px;
   border-radius: 12px;
-  background: #00b4d8;
+  background: #FF5251;
   display: flex;
   justify-content: center;
   align-items: center;

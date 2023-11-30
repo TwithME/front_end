@@ -197,7 +197,7 @@ const ReviewHashTag = styled.button`
 
   padding: 0px 8px;
   margin-right: 8px;
-  background: #00b4d8;
+  background: #FF5251;
   border-radius: 30px;
 
   font-weight: 500;
