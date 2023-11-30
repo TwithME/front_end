@@ -1,5 +1,5 @@
-import FindTripylerList from "@/components/units/findTripyler/list/list.container";
+import FindTwithmeList from "@/components/units/findTwithme/list/list.container";
 
 export default function FindTripylerListPage() {
-  return <FindTripylerList></FindTripylerList>;
+  return <FindTwithmeList></FindTwithmeList>;
 }
