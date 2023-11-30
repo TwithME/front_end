@@ -1,5 +1,5 @@
-import FindTripylerApplyDetail from "@/components/units/findTripyler/apply/applyDetail.container";
+import FindTwithmeApplyDetail from "../../../../components/units/findTwithme/apply/applyDetail.container";
 
-export default function FindTripylerApplyDetailPage() {
-  return <FindTripylerApplyDetail />;
+export default function FindTwithmeApplyDetailPage() {
+  return <FindTwithmeApplyDetail />;
 }
