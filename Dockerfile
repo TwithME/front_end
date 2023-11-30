@@ -1,23 +1,14 @@
-FROM nginx
+FROM node:18.16.0
 
-#nginx의 default.conf를 삭제
-RUN mkdir /allso
+WORKDIR /usr/src/app
 
-WORKDIR /allso
+COPY package*.json ./
 
-RUN mkdir ./build
-
-ADD ./build ./build
-
-COPY ./nginx.conf /etc/nginx/conf.d
-
-#host pc의 nginx.conf를 아래 경로에 복사
-COPY ./build /usr/share/nginx/html
+RUN npm install
 
 
-# 3000포트 개방
-EXPOSE 3000
+COPY . .
 
-# 컨테이너 실행시 자동으로 실행항 command. nginx시작
-CMD ["nginx", "-g", "daemon off;"]
+RUN npm run build
 
+CMD ["npm", "run", "start"]

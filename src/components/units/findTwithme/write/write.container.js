@@ -281,7 +281,7 @@ export default function FindBoardWrite(props) {
       formData.append("images", selectedImage);
 
       await axios
-        .post(apiPath + "/borad", formData, {
+        .post(apiPath + "/board", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
             accept: "application/json",
