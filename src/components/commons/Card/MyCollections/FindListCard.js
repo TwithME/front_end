@@ -81,7 +81,7 @@ const ReviewHashTag = styled.div`
 
     padding: 5px 8px;
     margin-right: 15px;
-    background: #00b4d8;
+    background: #FF5251;
     border-radius: 30px;
     text-align: center;
 

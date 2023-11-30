@@ -168,16 +168,16 @@ export const RejectBtn = styled.button`
   padding: 15px 30px;
   border-radius: 50px;
   background: #ffffff;
-  border: 1px solid #00b4d8;
+  border: 1px solid #FF5251;
 
-  color: #00b4d8;
+  color: #FF5251;
   text-align: center;
   font-size: 24px;
   font-weight: 700;
 `;
 
 export const AcceptBtn = styled(RejectBtn)`
-  background: #00b4d8;
+  background: #FF5251;
   color: #fff;
 `;
 
