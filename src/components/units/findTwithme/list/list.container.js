@@ -134,7 +134,7 @@ export default function FindTwithmeList(){
           }
       
           await axios
-            .post(`${apipath}/borad/list?isRecruiting=1&option=1`, requestData)
+            .post(`${apipath}/board/list?isRecruiting=1&option=1`, requestData)
             .then((res) => {
               setCardList(res.data.data);   
               setPage(1);
@@ -155,7 +155,7 @@ export default function FindTwithmeList(){
           }
 
           await axios
-            .post(`${apipath}/borad/list?isRecruiting=1&option=1`, requestData)
+            .post(`${apipath}/board/list?isRecruiting=1&option=1`, requestData)
             .then((res) => {
               setCardList(res.data.data);   
               setPage(1);
@@ -191,7 +191,7 @@ export default function FindTwithmeList(){
       }
   
       await axios
-        .post(`${apipath}/borad/list?isRecruiting=${parseInt(isRecruiting || 1)}&option=${parseInt(option || 1)}`, requestData)
+        .post(`${apipath}/board/list?isRecruiting=${parseInt(isRecruiting || 1)}&option=${parseInt(option || 1)}`, requestData)
         .then((res) => {
           setNewCardList(res.data.data);
           setPage(1);
