@@ -1,15 +1,14 @@
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import { styled, keyframes } from "styled-components";
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import {
   FindCardFilter,
-  LoginState,
+  IsAdmin,
   IsFirstLogin,
-  logout,
   JwtTokenState,
-  IsAdmin
+  LoginState
 } from "@/States/LoginState";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { styled } from "styled-components";
 import TopBtn from "./TopBtn";
 
 export default function NavBar(props) {
@@ -35,15 +34,15 @@ export default function NavBar(props) {
   };
 
   // 토큰이 만료되었을 경우
-  function checkToken () {
-    if(jwtInfo.expiryTime < new Date().getTime()){
-      alert("토큰이 만료되었습니다. 로그인을 다시 진행하여 주세요.");
-      router.push("/auth/signIn");
-      logout({setJwtToken});
-      setIsLoggedIn(false);
-      return true;
-    } else { return false; }
-  };
+  // function checkToken () {
+  //   if(jwtInfo.expiryTime < new Date().getTime()){
+  //     alert("토큰이 만료되었습니다. 로그인을 다시 진행하여 주세요.");
+  //     router.push("/auth/signIn");
+  //     logout({setJwtToken});
+  //     setIsLoggedIn(false);
+  //     return true;
+  //   } else { return false; }
+  // };
 
   useEffect(() => {
     window.addEventListener('scroll', (e) => {
@@ -83,38 +82,30 @@ export default function NavBar(props) {
   };
 
   const onMesseageBtn = () => {
-    if(!checkToken()){
       router.push({
         pathname: "/auth/profile",
         query: {category: "message"}
       });
-    }
   };
 
   const onLikeBtn = () => {
-    if(!checkToken()){
       router.push({
         pathname: "/auth/profile",
         query: {category: "myCollections"}
       });
-    }
   };
 
   const onProfileBtn = () => {
-    if(!checkToken()) {
       router.push("/auth/profile");
-    }
   };
 
   const onClickInfoMsgBtn = () => {
-    if(!checkToken()){
       if (infoMsgNum < 2) {
         setInfoMsgNum((prev) => prev + 1);
       } else {
         setInfoMsgNum(-1);
         setIsFirstLogin(false);
         router.push("/auth/profile");
-      }
     }
   };
 
@@ -133,16 +124,12 @@ export default function NavBar(props) {
             <Item onClick={() => router.push("/addition/introduce")}>TwithMe 소개</Item>
             <Item onClick={() => {
               if(isLoggedIn) {
-                if(!checkToken()) {
                   router.push("/findTwithme"); setFindCardFilter({});
-                }
               } 
             }}>TwithME 찾기</Item>
             <Item onClick={() => {
               if(isLoggedIn) {
-                if(!checkToken()){
                   router.push("/review")}}
-                }
               } 
             >여행 후기</Item>
             <Item onClick={() => router.push("/addition/contact")}>Contact</Item>
