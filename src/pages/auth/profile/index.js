@@ -1,4 +1,4 @@
-import Profile from "../../../src/components/units/auth/profile/Profile.container";
+import Profile from "../../../components/units/auth/profile/Profile.container";
 
 export default function ProfilePage() {
     return <Profile></Profile>;

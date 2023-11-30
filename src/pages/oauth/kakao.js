@@ -32,13 +32,10 @@ const OAuthKaKao = () => {
             axios.get(`http://semtle.catholic.ac.kr:8081/oauth/kakao?code=${router.query.code}`)
               .then((res) => {
                 console.log("!");
-                console.log(res);
+                console.log(response.data.access_token);
                 axios
                   .post(
-                    "https://semtle.catholic.ac.kr:8081/user/login/kakao",
-                    {
-                      accessTokenFromSocial: res.data.id_token,
-                    },
+                    `http://semtle.catholic.ac.kr:8081/user/login/kakao?accessTokenFromSocial=${response.data.access_token}`,
                     { "Content-Type": "application/json" }
                   )
                   .then((response2) => {
@@ -53,7 +50,7 @@ const OAuthKaKao = () => {
                       if (response2.data.data.needsAdditionalSignUp === true) {
                         router.push("/auth/join/signup");
                       }
-                      router.push("/main");
+                      router.push("/");
                       setIsLoggedIn(true);
                     }
                   });
