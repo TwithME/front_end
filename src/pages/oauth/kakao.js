@@ -21,7 +21,7 @@ const OAuthKaKao = () => {
       axios
         .post(
           // `https://kauth.kakao.com/oauth/token?grant_type=authorization_code&client_id=a3f0e3e7dc71d97efa34645ffbcfa72d&redirect_uri=http://semtle.catholic.ac.kr:8081/oauth/kakao&code=${router.query.code}`,
-          `https://kauth.kakao.com/oauth/token?grant_type=authorization_code&client_id=a3f0e3e7dc71d97efa34645ffbcfa72d&redirect_uri=http://localhost:3000/oauth/kakao&code=${router.query.code}`,
+          `https://kauth.kakao.com/oauth/token?grant_type=authorization_code&client_id=a3f0e3e7dc71d97efa34645ffbcfa72d&redirect_uri=http://semtle.catholic.ac.kr:3000/oauth/kakao&code=${router.query.code}`,
           {
             "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
           }
