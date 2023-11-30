@@ -6,7 +6,7 @@ export default function MainPage() {
     const loginState = useRecoilValue(LoginState);
     return(
         <>
-            {/* {loginState ? <Main login></Main> : <Main></Main>} */}<Main login />
+            {loginState ? <Main login></Main> : <Main></Main>}
         </>
     )
 }
